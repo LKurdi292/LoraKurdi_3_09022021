@@ -7,21 +7,116 @@
 	<!-- Style Sheets -->
 	<link rel="stylesheet" href="sass/main.scss" type="text/sass">
 	<link rel="stylesheet" href="css/style.css" type="text/css">
-
+	
+	
 	<title>OhMyFood - Composez et réservez votre menu gastronomique en ligne</title>
-
+	
 	<!-- Favicon -->
 	<link rel="icon" href="./images/logo/ohmyfood.ico" type="image/x-icon">
 </head>
 
 
 <body>
-
-	<header>
-		
-
-
+	<header class="header">
+		<img class="header__arrow" src="./images/arrow-left-solid.svg" alt="fleche retour accueil">
+		<img class="header__logo" src="./images/logo/ohmyfood.png" alt="logo OhMyFood">
 	</header>
+	
 
+	<div class="position">
+		<div class="position__markerContainer">
+			<img src="./images/map-marker-alt-solid.svg" alt="marqueur sur carte">
+		</div>
+		<p class="position__ville">Paris, Belleville</p>
+	</div>
+
+
+	<div class="presentation">
+		<div class="presentation__contentContainer">
+			<h2>Réservez le menu qui vous convient</h2>
+			
+			<h3>Découvrez des restaurants d'exception, séléctionnés par nos soins.</h3>
+			
+			<div class="buttonContainer">
+				<button value="">Explorer nos restaurants</button>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="fonctionnement">
+		<h2>Fonctionnement</h2>
+
+		<div class="fonctionnement__etape fonctionnement__etape--1">
+			<div class="numContainer">
+				<p>1</p>
+			</div>
+
+			<div class="texteEtape">
+				<img src="./images/mobile-alt-solid.svg" alt="téléphone">
+				<p>Choisissez un restaurant</p>
+			</div>
+		</div>
+
+		<div class="fonctionnement__etape fonctionnement__etape--2">
+			<div class="numContainer">
+				<p>2</p>
+			</div>
+
+			<div class="texteEtape">
+				<img src="./images/list-solid.svg" alt="menu">
+				<p>Composez votre menu</p>
+			</div>
+		</div>
+
+		<div class="fonctionnement__etape fonctionnement__etape--3">
+			<div class="numContainer">
+				<p>3</p>
+			</div>
+
+			<div class="texteEtape">
+				<img src="./images/store-solid.svg" alt="restaurant">
+				<p>Dégustez au restaurant</p>
+			</div>
+		</div>
+
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<footer class="footer">
+		<div class="footer__container">
+		
+			<img class="logo" title="OhMyFood" src="./images/logo/ohmyfood.svg" alt="petit logo OhMyFood">
+			
+			<div class="restau">
+				<img src="./images/utensils-solid.svg" alt="icone d'ustensiles">
+				<p><a href="#" title="Proposer un restaurant">Proposer un restaurant</a></p>
+			</div>
+			
+			<div class="partenaire">
+				<img src="./images/hands-helping-solid.svg" alt="icone poignée de mains">
+				<p><a href="#" title="Devenir Partenaire">Devenir partenaire</a></p>
+			</div>
+			
+			<nav class="nav">
+				<ul>
+					<li><a title="Mentions Légales" href="#">Mentions légales</a></li>
+					<li><a title="Envoyer un courriel" href="mailto:kurdilora@gmail.com">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</footer>
 </body>
 </html>
