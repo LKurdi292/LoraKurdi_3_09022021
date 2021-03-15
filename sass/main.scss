@@ -1,22 +1,5 @@
 @import "./utils/variables";
-
-
-@font-face {
-	font-family: 'shrikhand';
-	src: url(../fonts/shrikhand/Shrikhand-Regular.otf);
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'roboto';
-	src: url(../fonts/roboto/Roboto-Regular.ttf);
-}
-
-
-
-
-
+@import "./utils/fonts";
 
 
 body {
@@ -28,14 +11,15 @@ a {
 }
 
 
+/* Header commun aux 5 pages */ 
 .header {
-	height: 5vh;
+	height: 4.5vh;
 	padding: 5% 0 3% 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background-color: white;
-	box-shadow: 10px 10px 10px black;
+	box-shadow: 0px 1px 5px rgba(0, 0, 0, .5);
 
 	&__arrow {
 		display: none;
@@ -44,13 +28,18 @@ a {
 	&__logo {
 		width: 200px;
 		height: auto;
+		transform: scale(0.8);
 	}
 }
 
+
+
+
+/* Section Position - Ville de recherche */
 .position {
 	margin: 0;
-	height: 7vh;
-	background-color: rgb(206, 206, 206);
+	height: 6vh;
+	background-color: $grisPerle;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -64,21 +53,28 @@ a {
 		img {
 			margin: 0 10px 0 0;
 			width: 12px;
+			opacity: 0.8;
 		}
 	}
 
 	&__ville {
 		margin: 0;
-		font-size: 18px;
+		font-size: 16px;
+		font-weight: bold;
 		font-family: 'roboto';
+		letter-spacing: 0.02rem;
+		opacity: 0.7;
 	}
 }
 
 
+
+/* Section Présentation du concept */
 .presentation {
 	margin: 0;
-	padding: 0 5%;
+	padding: 0 3%;
 	background-color: $grisGlace;
+	// border: 1px solid black;
 
 	&__contentContainer {
 		padding: 50px 0;
@@ -88,17 +84,20 @@ a {
 		// border: 1px dashed black;
 
 		h2 {
-			width: 70%;
+			width: 85%;
 			margin: 0 auto;
-			font-size: 26px;
-			font-weight: bold;
+			font-size: 24px;
+			font-weight: 1000;
+			// border: 1px solid red;
 		}
 
 		h3 {
-			width: 75%;
-			margin: 5% auto 10%;
+			width: 90%;
+			margin: 5% auto 8% auto;
 			font-weight: lighter;
 			font-size: 18px;
+			opacity: 0.6;
+			// border: 1px solid red;
 		}
 
 		.buttonContainer {
@@ -119,19 +118,19 @@ a {
 				background: linear-gradient(150deg, $secondary_color, $primary_color);
 			}
 		}
-
 	}
 }
 
 
+/* Section Fonctionnement - Les 3 étapes */ 
 .fonctionnement {
 	font-family: 'roboto';
 	padding: 8% 6%;
+	// border: 1px solid blue;
 
 	img {
-		width: 12px;
 		display: inline-block;
-		margin: 0 12% 0 10%;
+		margin: 0 10%;
 	}
 
 	h2 {
@@ -144,7 +143,6 @@ a {
 		align-items: center;
 		width: 100%;
 			
-
 		.numContainer {
 			width: 25px;
 			height: 25px;
@@ -163,7 +161,6 @@ a {
 			}
 		}
 
-
 		.texteEtape {
 			display: flex;
 			align-items: center;
@@ -176,15 +173,118 @@ a {
 			letter-spacing: 1px;
 			border-radius: 20px;
 			box-shadow: 1px 0 5px grey;
-			margin: 0 0 5% -1rem;
+			margin: 0 0 5% -0.8rem;
 
 			p {
 				margin: 0;
 			}
-
 		}
 	}
 
+	&__etape--1 {
+		img {
+			width: 12px;
+			opacity: 0.5;
+			transform: scale(1.2);
+		}
+	}
+
+	&__etape--2 {
+		img {
+			width: 16px;
+			opacity: 0.5;
+			transform: scale(1.2);
+		}
+	}
+
+	&__etape--3 {
+		.fa-store {
+			margin: 0 10%;
+			font-size: 16px;
+			color: $primary_color;
+		}
+	}
+}
+
+
+/* Section Restaurants - Accueil*/
+.restaurants {
+	padding: 10%;
+	background-color: $grisGlace;
+
+	h2 {
+		font-family: 'roboto';
+		font-weight: bold;
+		margin: 0 0 8% 0;
+	}
+
+	&__container {
+		margin: 0 0 5% 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		// border: 1px dashed red;
+
+		.card {
+			width: 100%;
+			height: 250px;
+			margin: 3% 0;
+			border-radius: 15px;
+			cursor: pointer;
+			box-shadow: 0px 1px 10px gray;
+			// border: 1px blue solid;
+
+			.pic {
+				height: 75%;
+				border-radius: 15px 15px 0 0;
+				// border: 1px solid orange;
+				
+			}
+			#paletteGout {
+				background: url('../images/restaurants/resto_la-palette-du-gout.jpg') no-repeat; 
+				background-size: cover;
+				background-position: 95% 90%;
+			}
+			#noteEnchantee {
+				background: url('../images/restaurants/resto_la-note-enchantee.jpg') no-repeat;
+				background-size: cover;
+				background-position: 60% 60%;
+			}
+			#aLaFrancaise {
+				background: url('../images/restaurants/resto_a-la-francaise.jpg') no-repeat;
+				background-size: cover;
+				background-position: 50% 90%;
+			}
+			#deliceDesSens {
+				background: url('../images/restaurants/resto_le-delice-des-sens.jpg') no-repeat;
+				background-size: cover;
+				background-position: 50% 90%;
+			}
+
+
+
+			.textUnderPic {
+				height: 25%;
+				border-radius:  0 0 15px 15px;
+				background-color: white;
+				padding: 0;
+
+				p {
+					margin: 1% 0 1% 3%;
+					font-family: 'roboto';
+					font-size: 18px;
+				}
+
+				p:not(:last-child) {
+					font-weight: bold;
+				}
+
+				.coeur {
+					position: absolute;
+				}
+			}
+		}
+	}
 }
 
 
@@ -192,18 +292,18 @@ a {
 
 
 
-
-
-
-
+/* Footer commun aux 5 pages */
 .footer {
-	width: 100vw;
 	height: 25vh;
-	background-color: grey;
+	background-color: $footer_color;
+	// border: 1px dashed red;
 
 	&__container {
 		width: 85%;
 		margin: auto;
+		font-family: 'roboto';
+		font-size: 16px;
+		font-weight: bold;
 
 		> *:not(:last-child) {
 			margin-bottom: 8px;
@@ -212,9 +312,8 @@ a {
 		img {
 			width: 10px;
 			height: 15px;
-			margin: 0 6px 0 0;
+			margin: 0 8px 0 0;
 		}
-
 		a {
 			color: white;
 		}
@@ -225,7 +324,7 @@ a {
 		.logo {
 			margin: 25px 0 10px 0;
 			width: 100px;
-			border: 1px solid red;
+			// border: 1px solid red;
 		}
 		.restau {
 			display: flex;
@@ -239,6 +338,7 @@ a {
 			padding: 0;
 			margin: 0;
 			list-style-type: none;
+			// border: 1px solid black;
 
 			li:not(:last-child) {
 				margin-bottom: 10px;

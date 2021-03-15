@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "shrikhand";
   src: url(../fonts/shrikhand/Shrikhand-Regular.otf);
@@ -16,14 +17,15 @@ a {
   text-decoration: none;
 }
 
+/* Header commun aux 5 pages */
 .header {
-  height: 5vh;
+  height: 4.5vh;
   padding: 5% 0 3% 0;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
-  box-shadow: 10px 10px 10px black;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
 }
 .header__arrow {
   display: none;
@@ -31,12 +33,14 @@ a {
 .header__logo {
   width: 200px;
   height: auto;
+  transform: scale(0.8);
 }
 
+/* Section Position - Ville de recherche */
 .position {
   margin: 0;
-  height: 7vh;
-  background-color: #cecece;
+  height: 6vh;
+  background-color: rgba(206, 206, 206, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,17 +53,22 @@ a {
 .position__markerContainer img {
   margin: 0 10px 0 0;
   width: 12px;
+  opacity: 0.8;
 }
 .position__ville {
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: bold;
   font-family: "roboto";
+  letter-spacing: 0.02rem;
+  opacity: 0.7;
 }
 
+/* Section Présentation du concept */
 .presentation {
   margin: 0;
-  padding: 0 5%;
-  background-color: #ededed;
+  padding: 0 3%;
+  background-color: rgba(237, 237, 237, 0.5);
 }
 .presentation__contentContainer {
   padding: 50px 0;
@@ -68,16 +77,17 @@ a {
   font-family: "roboto";
 }
 .presentation__contentContainer h2 {
-  width: 70%;
+  width: 85%;
   margin: 0 auto;
-  font-size: 26px;
-  font-weight: bold;
+  font-size: 24px;
+  font-weight: 1000;
 }
 .presentation__contentContainer h3 {
-  width: 75%;
-  margin: 5% auto 10%;
+  width: 90%;
+  margin: 5% auto 8% auto;
   font-weight: lighter;
   font-size: 18px;
+  opacity: 0.6;
 }
 .presentation__contentContainer .buttonContainer {
   width: 230px;
@@ -97,14 +107,14 @@ a {
   background: linear-gradient(150deg, #FF79DA, #9356DC);
 }
 
+/* Section Fonctionnement - Les 3 étapes */
 .fonctionnement {
   font-family: "roboto";
   padding: 8% 6%;
 }
 .fonctionnement img {
-  width: 12px;
   display: inline-block;
-  margin: 0 12% 0 10%;
+  margin: 0 10%;
 }
 .fonctionnement h2 {
   margin: 0 0 10% 0;
@@ -134,7 +144,7 @@ a {
 .fonctionnement__etape .texteEtape {
   display: flex;
   align-items: center;
-  background-color: #ededed;
+  background-color: rgba(237, 237, 237, 0.5);
   width: 100%;
   height: 70px;
   font-family: "roboto";
@@ -143,20 +153,104 @@ a {
   letter-spacing: 1px;
   border-radius: 20px;
   box-shadow: 1px 0 5px grey;
-  margin: 0 0 5% -1rem;
+  margin: 0 0 5% -0.8rem;
 }
 .fonctionnement__etape .texteEtape p {
   margin: 0;
 }
+.fonctionnement__etape--1 img {
+  width: 12px;
+  opacity: 0.5;
+  transform: scale(1.2);
+}
+.fonctionnement__etape--2 img {
+  width: 16px;
+  opacity: 0.5;
+  transform: scale(1.2);
+}
+.fonctionnement__etape--3 .fa-store {
+  margin: 0 10%;
+  font-size: 16px;
+  color: #9356DC;
+}
 
+/* Section Restaurants - Accueil*/
+.restaurants {
+  padding: 10%;
+  background-color: rgba(237, 237, 237, 0.5);
+}
+.restaurants h2 {
+  font-family: "roboto";
+  font-weight: bold;
+  margin: 0 0 8% 0;
+}
+.restaurants__container {
+  margin: 0 0 5% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.restaurants__container .card {
+  width: 100%;
+  height: 250px;
+  margin: 3% 0;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0px 1px 10px gray;
+}
+.restaurants__container .card .pic {
+  height: 75%;
+  border-radius: 15px 15px 0 0;
+}
+.restaurants__container .card #paletteGout {
+  background: url("../images/restaurants/resto_la-palette-du-gout.jpg") no-repeat;
+  background-size: cover;
+  background-position: 95% 90%;
+}
+.restaurants__container .card #noteEnchantee {
+  background: url("../images/restaurants/resto_la-note-enchantee.jpg") no-repeat;
+  background-size: cover;
+  background-position: 60% 60%;
+}
+.restaurants__container .card #aLaFrancaise {
+  background: url("../images/restaurants/resto_a-la-francaise.jpg") no-repeat;
+  background-size: cover;
+  background-position: 50% 90%;
+}
+.restaurants__container .card #deliceDesSens {
+  background: url("../images/restaurants/resto_le-delice-des-sens.jpg") no-repeat;
+  background-size: cover;
+  background-position: 50% 90%;
+}
+.restaurants__container .card .textUnderPic {
+  height: 25%;
+  border-radius: 0 0 15px 15px;
+  background-color: white;
+  padding: 0;
+}
+.restaurants__container .card .textUnderPic p {
+  margin: 1% 0 1% 3%;
+  font-family: "roboto";
+  font-size: 18px;
+}
+.restaurants__container .card .textUnderPic p:not(:last-child) {
+  font-weight: bold;
+}
+.restaurants__container .card .textUnderPic .coeur {
+  position: absolute;
+}
+
+/* Footer commun aux 5 pages */
 .footer {
-  width: 100vw;
   height: 25vh;
-  background-color: grey;
+  background-color: #606060;
 }
 .footer__container {
   width: 85%;
   margin: auto;
+  font-family: "roboto";
+  font-size: 16px;
+  font-weight: bold;
 }
 .footer__container > *:not(:last-child) {
   margin-bottom: 8px;
@@ -164,7 +258,7 @@ a {
 .footer__container img {
   width: 10px;
   height: 15px;
-  margin: 0 6px 0 0;
+  margin: 0 8px 0 0;
 }
 .footer__container a {
   color: white;
@@ -175,7 +269,6 @@ a {
 .footer__container .logo {
   margin: 25px 0 10px 0;
   width: 100px;
-  border: 1px solid red;
 }
 .footer__container .restau {
   display: flex;

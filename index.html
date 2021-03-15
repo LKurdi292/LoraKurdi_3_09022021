@@ -7,6 +7,8 @@
 	<!-- Style Sheets -->
 	<link rel="stylesheet" href="sass/main.scss" type="text/sass">
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/fontawesome-free-5.15.2-web/css/fontawesome.min.css" type="text/css">
+	<link rel="stylesheet" href="css/fontawesome-free-5.15.2-web/css/all.min.css" type="text/css">
 	
 	
 	<title>OhMyFood - Composez et réservez votre menu gastronomique en ligne</title>
@@ -23,15 +25,15 @@
 	</header>
 	
 
-	<div class="position">
+	<section class="position">
 		<div class="position__markerContainer">
 			<img src="./images/map-marker-alt-solid.svg" alt="marqueur sur carte">
 		</div>
 		<p class="position__ville">Paris, Belleville</p>
-	</div>
+	</section>
 
 
-	<div class="presentation">
+	<section class="presentation">
 		<div class="presentation__contentContainer">
 			<h2>Réservez le menu qui vous convient</h2>
 			
@@ -41,17 +43,16 @@
 				<button value="">Explorer nos restaurants</button>
 			</div>
 		</div>
-	</div>
+	</section>
 
 
-	<div class="fonctionnement">
+	<section class="fonctionnement">
 		<h2>Fonctionnement</h2>
 
 		<div class="fonctionnement__etape fonctionnement__etape--1">
 			<div class="numContainer">
 				<p>1</p>
 			</div>
-
 			<div class="texteEtape">
 				<img src="./images/mobile-alt-solid.svg" alt="téléphone">
 				<p>Choisissez un restaurant</p>
@@ -62,7 +63,6 @@
 			<div class="numContainer">
 				<p>2</p>
 			</div>
-
 			<div class="texteEtape">
 				<img src="./images/list-solid.svg" alt="menu">
 				<p>Composez votre menu</p>
@@ -73,22 +73,64 @@
 			<div class="numContainer">
 				<p>3</p>
 			</div>
-
 			<div class="texteEtape">
-				<img src="./images/store-solid.svg" alt="restaurant">
+				<i class="fas fa-store" alt="restaurant"></i>
+				<!-- <img src="./images/store-solid.svg" alt="restaurant"> -->
 				<p>Dégustez au restaurant</p>
 			</div>
 		</div>
+	</section>
 
 
+	<section class="restaurants">
+		<h2>Restaurants</h2>
 
+		<div class="restaurants__container">
+			<div class="card">
+				<a href="#"></a>
+				<div class="pic" id="paletteGout"></div>
+				<div class="textUnderPic">
+					<div class="coeur"></div>
+					<p>La palette du goût</p>
+					<p>Ménilmontant</p>
+				</div>
+			</div>
 
+			<div class="card">
+				<a href="#"></a>
+				<div class="pic" id="noteEnchantee">
+				</div>
+				<div class="textUnderPic">
+					<div class="coeur"></div>
+					<p>La note enchantée</p>
+					<p>Charonne</p>
+				</div>
+			</div>
 
+			<div class="card">
+				<a href="#"></a>
+				<div class="pic" id="aLaFrancaise">
+				</div>
+				<div class="textUnderPic">
+					<div class="coeur"></div>
+					<p>À la française</p>
+					<p>Cité Rouge</p>
+				</div>
+			</div>
 
-	</div>
+			<div class="card">
+				<a href="#"></a>
+				<div class="pic" id="deliceDesSens">
+				</div>
+				<div class="textUnderPic">
+					<div class="coeur"></div>
+					<p>Le délice des sens</p>
+					<p>Folie-Méricourt</p>
+				</div>
+			</div>
+		</div>
 
-
-
+	</section>
 
 
 
