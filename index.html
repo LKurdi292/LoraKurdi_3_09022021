@@ -19,6 +19,10 @@
 
 
 <body>
+	<div class="loader__container">
+		<div class="loader"></div>
+	</div>
+
 	<header class="header">
 		<img class="header__arrow" src="./images/arrow-left-solid.svg" alt="fleche retour accueil">
 		<img class="header__logo" src="./images/logo/ohmyfood.png" alt="logo OhMyFood">
@@ -75,7 +79,6 @@
 			</div>
 			<div class="texteEtape">
 				<i class="fas fa-store" alt="restaurant"></i>
-				<!-- <img src="./images/store-solid.svg" alt="restaurant"> -->
 				<p>Dégustez au restaurant</p>
 			</div>
 		</div>
@@ -88,22 +91,29 @@
 		<div class="restaurants__container">
 			<div class="card">
 				<a href="#"></a>
-				<div class="pic" id="paletteGout"></div>
+				<div class="pic" id="paletteGout">
+					<div class="new">Nouveau</div>
+				</div>
 				<div class="textUnderPic">
+					<div class="containerText">
+						<p>La palette du goût</p>
+						<p>Ménilmontant</p>
+					</div>
 					<div class="coeur"></div>
-					<p>La palette du goût</p>
-					<p>Ménilmontant</p>
 				</div>
 			</div>
 
 			<div class="card">
 				<a href="#"></a>
 				<div class="pic" id="noteEnchantee">
+					<div class="new">Nouveau</div>
 				</div>
 				<div class="textUnderPic">
+					<div class="containerText">
+						<p>La note enchantée</p>
+						<p>Charonne</p>
+					</div>
 					<div class="coeur"></div>
-					<p>La note enchantée</p>
-					<p>Charonne</p>
 				</div>
 			</div>
 
@@ -112,9 +122,11 @@
 				<div class="pic" id="aLaFrancaise">
 				</div>
 				<div class="textUnderPic">
+					<div class="containerText">
+						<p>À la française</p>
+						<p>Cité Rouge</p>
+					</div>
 					<div class="coeur"></div>
-					<p>À la française</p>
-					<p>Cité Rouge</p>
 				</div>
 			</div>
 
@@ -123,9 +135,11 @@
 				<div class="pic" id="deliceDesSens">
 				</div>
 				<div class="textUnderPic">
+					<div class="containerText">
+						<p>Le délice des sens</p>
+						<p>Folie-Méricourt</p>
+					</div>
 					<div class="coeur"></div>
-					<p>Le délice des sens</p>
-					<p>Folie-Méricourt</p>
 				</div>
 			</div>
 		</div>
@@ -143,12 +157,12 @@
 			<img class="logo" title="OhMyFood" src="./images/logo/ohmyfood.svg" alt="petit logo OhMyFood">
 			
 			<div class="restau">
-				<img src="./images/utensils-solid.svg" alt="icone d'ustensiles">
+				<i class="fas fa-utensils" alt="icone d'ustensiles"></i>
 				<p><a href="#" title="Proposer un restaurant">Proposer un restaurant</a></p>
 			</div>
 			
 			<div class="partenaire">
-				<img src="./images/hands-helping-solid.svg" alt="icone poignée de mains">
+				<i class="fas fa-hands-helping" alt="icone poignée de mains"></i>
 				<p><a href="#" title="Devenir Partenaire">Devenir partenaire</a></p>
 			</div>
 			
