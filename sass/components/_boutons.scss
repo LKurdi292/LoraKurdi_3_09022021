@@ -1,0 +1,39 @@
+
+/* Les boutons */
+.buttonContainer {
+	width: 230px;
+	margin: auto;
+	text-align: center;
+	border-radius: 100px;
+	@extend %shadow;
+
+	&:hover {
+		animation-name: opacity;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+	}
+	
+	button {
+		width: 100%;
+		//padding: auto;
+		height: 55px;
+		border-radius: 100px;
+		border: none;
+		color: white;
+		font-weight: bold;
+		font-size: 16px;
+		background: linear-gradient(150deg, $secondary_color, $primary_color);
+		
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+
+@keyframes opacity {
+	100% {
+		opacity: 0.8;
+		box-shadow: 0px 1px 15px rgba(0, 0, 0, .5);
+	}
+}

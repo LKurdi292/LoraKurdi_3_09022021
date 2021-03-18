@@ -1,26 +1,89 @@
 @charset "UTF-8";
-.restaurants__container .card, .fonctionnement__etape .texteEtape, .new, .buttonContainer, .header {
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
-}
-
-@font-face {
-  font-family: "shrikhand";
-  src: url(../fonts/shrikhand/Shrikhand-Regular.otf);
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "roboto";
-  src: url(../fonts/roboto/Roboto-Regular.ttf);
-}
 body {
   margin: 0;
+  position: relative;
 }
 
 a {
   text-decoration: none;
 }
 
+.restaurants__container .card, .fonctionnement__etape .texteEtape, .new, .header, .buttonContainer {
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Le coeur et ses animations - battements par défaut et remplissage au hover*/
+.coeur {
+  position: relative;
+  margin: auto;
+  height: 20px;
+  width: 20px;
+  transform: rotate(45deg);
+  background-color: #fface8;
+  animation: beat 1s infinite;
+}
+.coeur:hover, .coeur:focus {
+  animation: beat 0s;
+}
+.coeur:before {
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -10px;
+  background-color: #fface8;
+}
+.coeur:after {
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -10px;
+  background-color: #fface8;
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1) rotate(45deg);
+  }
+  50% {
+    transform: scale(0.8) rotate(45deg);
+  }
+}
+/* Les boutons */
+.buttonContainer {
+  width: 230px;
+  margin: auto;
+  text-align: center;
+  border-radius: 100px;
+}
+.buttonContainer:hover {
+  animation-name: opacity;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.buttonContainer button {
+  width: 100%;
+  height: 55px;
+  border-radius: 100px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  background: linear-gradient(150deg, #FF79DA, #9356DC);
+}
+.buttonContainer button:hover {
+  cursor: pointer;
+}
+
+@keyframes opacity {
+  100% {
+    opacity: 0.8;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.5);
+  }
+}
 /* Header commun aux 5 pages */
 .header {
   height: 4.5vh;
@@ -37,6 +100,16 @@ a {
   width: 200px;
   height: auto;
   transform: scale(0.8);
+}
+.header__arrow--display {
+  cursor: pointer;
+  display: flex;
+  position: absolute;
+  left: 5%;
+}
+.header__arrow--display img {
+  height: 20px;
+  width: 20px;
 }
 
 /* Footer commun aux 5 pages */
@@ -88,113 +161,71 @@ a {
   margin-bottom: 10px;
 }
 
-/* Les boutons */
-.buttonContainer {
-  width: 230px;
-  margin: auto;
-  text-align: center;
-  border-radius: 100px;
-}
-.buttonContainer:hover {
-  animation-name: opacity;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-}
-.buttonContainer button {
+/* Apparition de la page pendant la disparition du loading spinner */
+.main {
+  margin: 0;
   width: 100%;
-  padding: auto;
-  height: 55px;
-  border-radius: 100px;
-  border: none;
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  background: linear-gradient(150deg, #FF79DA, #9356DC);
+  animation: appear 4500ms linear;
 }
 
-@keyframes opacity {
-  100% {
-    opacity: 0.7;
-    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.5);
-  }
-}
-/* Le coeur et ses animations - battements par défaut et remplissage au hover*/
-.coeur {
-  position: relative;
-  margin: auto;
-  height: 20px;
-  width: 20px;
-  transform: rotate(45deg);
-  background-color: pink;
-  animation: beat 1s infinite;
-}
-.coeur:hover, .coeur:focus {
-  animation: beat 0s;
-}
-.coeur:before {
-  content: "";
-  border-radius: 50%;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: -10px;
-  background-color: pink;
-}
-.coeur:after {
-  content: "";
-  background-color: pink;
-  border-radius: 50%;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: -10px;
-}
-
-@keyframes beat {
+@keyframes appear {
   0% {
-    transform: scale(1) rotate(45deg);
+    opacity: 0;
   }
-  50% {
-    transform: scale(0.8) rotate(45deg);
+  90% {
+    opacity: 0.01;
+  }
+  99% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }
-/* Loading spinner*/
-.loader__container {
-  position: absolute;
-  top: 25%;
-  left: 25%;
-  height: 30vh;
-  width: 50vw;
-}
-.loader__container .loader::before, .loader__container .loader::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
-  border: 10px solid transparent;
+/* Loading spinner et son animation rotation */
+.loader {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  border: 10px solid rgba(181, 181, 181, 0.5);
+  border-radius: 50%;
   border-top-color: #9356DC;
-}
-.loader__container .loader::before {
-  z-index: 100;
-  animation: spin 1500ms infinite;
-}
-.loader__container .loader::after {
-  border: 10px solid rgba(206, 206, 206, 0.5);
+  border-bottom-color: #9356DC;
+  animation: spin 1500ms ease-in-out 3;
+  -webkit-animation: spin 1500ms ease-in-out 3;
 }
 
 @keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
   100% {
     -webkit-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     -o-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+/* Container du loading spinner qui disparait pendant l'apparition de la page */
+.loaderContainer {
+  position: absolute;
+  transform-origin: center;
+  top: 25vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  opacity: 0;
+  z-index: -3;
+  animation: disappear 4400ms ease-in-out;
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
   }
 }
 /* étiquette restaurant Nouveau */
@@ -213,6 +244,20 @@ a {
   color: #2F8373;
 }
 
+.restaurants__container .card, .fonctionnement__etape .texteEtape, .buttonContainer, .header, .new {
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+@font-face {
+  font-family: "shrikhand";
+  src: url(../fonts/shrikhand/Shrikhand-Regular.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "roboto";
+  src: url(../fonts/roboto/Roboto-Regular.ttf);
+}
 /* Section Position - Ville de recherche */
 .position {
   margin: 0;
@@ -360,6 +405,11 @@ a {
   position: relative;
   height: 75%;
   border-radius: 15px 15px 0 0;
+}
+.restaurants__container .card .pic > a {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 .restaurants__container .card #paletteGout {
   background: url("../images/restaurants/resto_la-palette-du-gout.jpg") no-repeat;

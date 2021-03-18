@@ -1,49 +1,75 @@
 
+/* Apparition de la page pendant la disparition du loading spinner */
+.main {
+	margin: 0;
+	width: 100%;
+	animation: appear 4500ms linear;
+}
 
-/* Loading spinner*/
-
-.loader__container {
-	position: absolute;
-	top: 25%;
-	left: 25%;
-	height: 30vh;
-	width: 50vw;
-
-	.loader::before, .loader::after {
-		content: "";
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		border-radius: 100%;
-		border: 10px solid transparent;
-		border-top-color: $primary_color;
+@keyframes appear {
+	0% {
+		opacity: 0;
 	}
-	  
-	.loader::before{
-		z-index: 100;
-		animation: spin 1500ms infinite;
+	90% {
+		opacity: 0.01;
 	}
-	
-	.loader::after{
-		border: 10px solid $grisPerle;
+	99% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1;
 	}
 }
 
-@keyframes spin{
-	0%{
-		-webkit-transform: rotate(0deg);
-		-ms-transform: rotate(0deg);
-		-o-transform: rotate(0deg);
-		transform: rotate(0deg);
-	}
+/* Loading spinner et son animation rotation */
+.loader {
+	display: inline-block;
+	width: 300px;
+	height: 300px;
+	border: 10px solid darken($grisPerle, 10%);
+	border-radius: 50%;
+	border-top-color: $primary_color;
+	border-bottom-color: $primary_color;
+	animation: spin 1500ms ease-in-out 3;
+	-webkit-animation: spin 1500ms ease-in-out 3;
+}
 
-	100%{
+@keyframes spin{
+	100% {
 		-webkit-transform: rotate(360deg);
 		-ms-transform: rotate(360deg);
 		-o-transform: rotate(360deg);
 		transform: rotate(360deg);
 	}
 }
+
+/* Container du loading spinner qui disparait pendant l'apparition de la page */
+.loaderContainer {
+	position: absolute;
+	transform-origin: center;
+	top: 25vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	opacity: 0;
+	z-index: -3;
+	//border: 1px solid black;
+	animation: disappear 4400ms ease-in-out;
+}
+
+@keyframes disappear {
+	0% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 0.7;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
 
 
 /* étiquette restaurant Nouveau */
