@@ -1,3 +1,12 @@
+@import "../utils/mixins";
+@import "../utils/functions";
+@import "../utils/variables";
+@import "../utils/fonts";
+@import "../components/boutons";
+@import "../components/coeur";
+
+
+
 
 /* Apparition de la page pendant la disparition du loading spinner */
 .main {
@@ -26,19 +35,15 @@
 	display: inline-block;
 	width: 300px;
 	height: 300px;
-	border: 10px solid darken($grisPerle, 10%);
+	border: 10px solid color(grisPerle_dark);
 	border-radius: 50%;
-	border-top-color: $primary_color;
-	border-bottom-color: $primary_color;
+	border-top-color: color(primary);
+	border-bottom-color: color(primary);
 	animation: spin 1500ms ease-in-out 3;
-	-webkit-animation: spin 1500ms ease-in-out 3;
 }
 
 @keyframes spin{
 	100% {
-		-webkit-transform: rotate(360deg);
-		-ms-transform: rotate(360deg);
-		-o-transform: rotate(360deg);
 		transform: rotate(360deg);
 	}
 }
@@ -71,6 +76,303 @@
 }
 
 
+/* Section Position - Ville de recherche */
+.position {
+	margin: 0;
+	height: 6vh;
+	background-color: color(grisPerle);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	// border: 1px solid green;
+
+	&__markerContainer {
+		display: flex;
+		justify-content: center;
+		height: 20px;
+
+		img {
+			margin: 0 10px 0 0;
+			width: 12px;
+			opacity: 0.8;
+		}
+	}
+
+	&__ville {
+		margin: 0;
+		font-size: 16px;
+		font-weight: bold;
+		font-family: 'roboto';
+		letter-spacing: 0.02rem;
+		opacity: 0.7;
+		@include tablet {
+			font-size: 22px;
+		}
+	}
+}
+
+
+/* Section Présentation du concept */
+.presentation {
+	margin: 0;
+	padding: 0 3%;
+	background-color: color(grisGlace);
+	// border: 1px solid black;
+
+	&__contentContainer {
+		padding: 50px 0;
+		margin: 0;
+		text-align: center;
+		font-family: 'roboto';
+		// border: 1px dashed black;
+
+		h2 {
+			width: 85%;
+			margin: 0 auto;
+			font-size: 24px;
+			font-weight: 1000;
+			// border: 1px solid red;
+			@include tablet {
+				font-size: 28px;
+			}
+		}
+
+		h3 {
+			width: 90%;
+			margin: 5% auto 8% auto;
+			font-weight: lighter;
+			font-size: 18px;
+			opacity: 0.6;
+			// border: 1px solid red;
+			@include tablet {
+				font-size: 22px;
+			}
+		}
+	}
+}
+
+
+/* Section Fonctionnement - Les 3 étapes */ 
+.fonctionnement {
+	font-family: 'roboto';
+	padding: 8% 6%;
+	// border: 1px solid blue;
+	@include tablet {
+		padding: 8% 12%;
+	}
+
+	img {
+		display: inline-block;
+		margin: 0 10%;
+	}
+
+	h2 {
+		margin: 0 0 10% 0;
+		font-weight: bold;
+		@include tablet {
+			font-size: 28px;
+			//text-align: center;
+		}
+	}
+
+	&__etape {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		@include tablet {
+			width: 80%;
+			margin: auto;
+		}
+		// @include middle {
+		// 	width: 75%;
+		// }
+
+		.numContainer {
+			width: 25px;
+			height: 25px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 100%;
+			background-color: color(primary);
+			z-index: 2;
+			margin: 0 0 5% 0;
+			@include tablet {
+				width: 30px;
+				height: 30px;
+			}
+
+			p {
+				color: white;
+				margin: 0;
+				font-size: 13px;
+				@include tablet {
+					font-size: 16px;
+				}
+			}
+		}
+
+		.texteEtape {
+			display: flex;
+			align-items: center;
+			background-color: color(grisGlace);
+			width: 100%;
+			height: 70px;
+			font-family: 'roboto';
+			font-weight: bold;
+			font-size: 16px;
+			letter-spacing: 1px;
+			border-radius: 20px;
+			margin: 0 0 5% -0.8rem;
+			@extend %shadow;
+			@include tablet {
+				height: 90px;
+				font-size: 20px;
+			}
+
+			p {
+				margin: 0;
+			}
+		}
+	}
+
+	&__etape--1 {
+		img {
+			width: 12px;
+			opacity: 0.5;
+			transform: scale(1.2);
+		}
+	}
+
+	&__etape--2 {
+		img {
+			width: 16px;
+			opacity: 0.5;
+			transform: scale(1.2);
+		}
+	}
+
+	&__etape--3 {
+		.fa-store {
+			margin: 0 10%;
+			font-size: 16px;
+			color: color(primary);
+		}
+	}
+}
+
+
+/* Section Restaurants - Accueil*/
+.restaurants {
+	background-color: color(grisGlace);
+	padding: 10%;
+	@include tablet {
+		padding: 10% 12%;
+	}
+
+	h2 {
+		font-family: 'roboto';
+		font-weight: bold;
+		margin: 0 0 6% 0;
+		@include tablet {
+			font-size: 28px;
+		}
+	}
+
+	&__container {
+		margin: 0 0 5% 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		// border: 1px dashed red;
+
+		.card {
+			width: 100%;
+			height: 250px;
+			margin: 3% 0;
+			border-radius: 15px;
+			cursor: pointer;
+			@extend %shadow;
+			// border: 1px blue solid;
+			@include tablet {
+				width: 90%;
+				margin: 6% auto;
+			}
+			
+			a {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+
+.pic {
+	position: relative;
+	height: 75%;
+	border-radius: 15px 15px 0 0;
+	// border: 1px solid orange;
+	@include tablet {
+		height: 65%;
+	}
+}
+#paletteGout {
+	background: url('../images/restaurants/resto_la-palette-du-gout.jpg') no-repeat; 
+	background-size: cover;
+	background-position: 95% 90%;
+	@include tablet {
+		background-position: 95% 75%;
+	}
+}
+#noteEnchantee {
+	background: url('../images/restaurants/resto_la-note-enchantee.jpg') no-repeat;
+	background-size: cover;
+	background-position: 60% 60%;
+}
+#aLaFrancaise {
+	background: url('../images/restaurants/resto_a-la-francaise.jpg') no-repeat;
+	background-size: cover;
+	background-position: 50% 90%;
+}
+#deliceDesSens {
+	background: url('../images/restaurants/resto_le-delice-des-sens.jpg') no-repeat;
+	background-size: cover;
+	background-position: 50% 90%;
+}
+
+.textUnderPic {
+	height: 25%;
+	border-radius:  0 0 15px 15px;
+	background-color: white;
+	padding: 1% 0 1% 4%;
+	display: flex;
+	justify-content: space-between;
+	@include tablet {
+		height: 35%;
+	}
+
+	.containerText {
+		width: 70%;
+		margin: 0;
+		padding: 0;
+		p {
+			color: black;
+			margin: 2% 0 0 0;
+			font-family: 'roboto';
+			font-size: 18px;
+			@include tablet {
+				font-size: 22px;
+			}
+		}
+		p:not(:last-child) {
+			font-weight: bold;
+		}
+	}
+}
+
+
 
 /* étiquette restaurant Nouveau */
 .new {
@@ -85,6 +387,12 @@
 	font-weight: bold;
 	z-index: 1;
 	@extend %shadow;
-	background-color: $tertiary_color;
-	color: $vert-fonce;
+	background-color: color(tertiary);
+	color: color(couleurNouveau);
+	@include tablet {
+		height: 25px;
+		font-size: 20px;
+		top: 20px;
+		right: 20px;
+	}
 }

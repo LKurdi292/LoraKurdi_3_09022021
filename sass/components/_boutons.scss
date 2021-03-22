@@ -1,11 +1,21 @@
 
+@import "../utils/variables";
+@import "../utils/mixins";
+@import "../utils/functions";
+
+
+
 /* Les boutons */
 .buttonContainer {
-	width: 230px;
+	width: 250px;
 	margin: auto;
 	text-align: center;
 	border-radius: 100px;
 	@extend %shadow;
+	@include tablet {
+		width: 300px;
+	}
+
 
 	&:hover {
 		animation-name: opacity;
@@ -15,15 +25,17 @@
 	
 	button {
 		width: 100%;
-		//padding: auto;
-		height: 55px;
+		height: 60px;
 		border-radius: 100px;
 		border: none;
 		color: white;
 		font-weight: bold;
-		font-size: 16px;
-		background: linear-gradient(150deg, $secondary_color, $primary_color);
-		
+		font-size: 18px;
+		background: linear-gradient(150deg, color(secondary), color(primary));
+		@include tablet {
+			font-size: 20px;
+		}
+
 		&:hover {
 			cursor: pointer;
 		}

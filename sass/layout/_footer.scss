@@ -1,16 +1,29 @@
+@import "../utils/variables";
+@import "../utils/functions";
+@import "../utils/mixins";
+
+
+
 /* Footer commun aux 5 pages */
 .footer {
-	height: 25vh;
-	background-color: $footer_color;
+	height: 20vh;
+	background-color: color(footer);
 	// border: 1px dashed red;
+	@include tablet {
+		height: 30vh;
+	}
 
 	&__container {
-		width: 85%;
+		width: 90%;
 		margin: auto;
 		font-family: 'roboto';
-		font-size: 16px;
+		padding: 5% 0 0 0;
 		font-weight: 600;
 		letter-spacing: 0.02em;
+		@include tablet {
+			width: 75%;
+			font-size: 22px;
+		}
 
 		.fas {
 			margin-right: 10px;
@@ -19,6 +32,9 @@
 
 		> *:not(:last-child) {
 			margin-bottom: 8px;
+			@include tablet {
+				margin-bottom: 20px;
+			}
 		}
 		
 		a {
@@ -28,12 +44,17 @@
 			margin: 0;
 		}
 		
-		.logo {
-			margin: 25px 0 10px 0;
-			height: 20px;
-			width: 100px;
+		.footer__logo {
+			margin: 0 0 1rem;
+			font-family: 'shrikhand';
 			color: white;
+			font-size: 20px;
+			font-weight: lighter;
 			// border: 1px solid red;
+			@include tablet {
+				font-size: 26px;
+				margin:  0 0 2rem;
+			}
 		}
 		.restau {
 			display: flex;
@@ -51,6 +72,9 @@
 
 			li:not(:last-child) {
 				margin-bottom: 10px;
+				@include tablet {
+					margin-bottom: 20px;
+				}
 			}
 		}
 	}

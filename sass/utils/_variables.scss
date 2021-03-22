@@ -1,15 +1,24 @@
-$primary_color: #9356DC;
-$secondary_color: #FF79DA;
-$tertiary_color: #99E2D0;
-$vert-fonce: #2F8373;
-
-
-
-$grisGlace: rgba(237, 237, 237, 0.5);
-$grisPerle: rgba(206, 206, 206, 0.5);
-
-$footer_color: rgb(58, 56, 56);
+$colors: (
+	primary: #9356DC,
+	secondary: #FF79DA,
+	secondary_light: lighten(#FF79DA, 10%),
+	tertiary: #99E2D0,
+	tertiary_dark: darken(#99E2D0, 15%),
+	couleurNouveau: #2F8373,
+	grisGlace: rgba(237, 237, 237, 0.5),
+	grisPerle: rgba(206, 206, 206, 0.5),
+	bg-menu: rgba(246, 246, 246,1),
+	grisPerle_dark: darken(rgba(206, 206, 206, 0.5), 10%),
+	footer: rgb(58, 56, 56)
+);
 
 %shadow {
 	box-shadow:	0px 1px 10px rgba(0, 0, 0, .3);
 }
+
+$breakpoints: (
+	tablet: 600px,
+	middle: 900px,
+	desktop: 1366px,
+	LGdesktop: 1920px
+);
