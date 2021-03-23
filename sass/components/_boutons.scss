@@ -1,9 +1,4 @@
 
-@import "../utils/variables";
-@import "../utils/mixins";
-@import "../utils/functions";
-
-
 
 /* Les boutons */
 .buttonContainer {
@@ -18,9 +13,8 @@
 
 
 	&:hover {
-		animation-name: opacity;
-		animation-duration: 1s;
-		animation-fill-mode: forwards;
+		animation: opacity 500ms forwards;
+		@extend %shadowHover;
 	}
 	
 	button {

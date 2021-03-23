@@ -6,11 +6,11 @@
 
 /* Footer commun aux 5 pages */
 .footer {
-	height: 20vh;
+	height: 25vh;
 	background-color: color(footer);
 	// border: 1px dashed red;
 	@include tablet {
-		height: 30vh;
+		height: 35vh;
 	}
 
 	&__container {
@@ -22,7 +22,7 @@
 		letter-spacing: 0.02em;
 		@include tablet {
 			width: 75%;
-			font-size: 22px;
+			font-size: 20px;
 		}
 
 		.fas {

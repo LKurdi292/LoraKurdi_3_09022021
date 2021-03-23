@@ -16,6 +16,10 @@ $colors: (
 	box-shadow:	0px 1px 10px rgba(0, 0, 0, .3);
 }
 
+%shadowHover {
+	box-shadow:	-1px -1px 15px rgba(0, 0, 0, .5);
+}
+
 $breakpoints: (
 	tablet: 600px,
 	middle: 900px,
