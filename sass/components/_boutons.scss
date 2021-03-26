@@ -6,6 +6,7 @@
 	margin: auto;
 	text-align: center;
 	border-radius: 100px;
+	transition: opacity 300ms ease-in-out;
 	@extend %shadow;
 	@include tablet {
 		width: 300px;
@@ -13,8 +14,8 @@
 
 
 	&:hover {
-		animation: opacity 500ms forwards;
-		@extend %shadowHover;
+		opacity: 0.8;
+		box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
 	}
 	
 	button {
@@ -33,13 +34,5 @@
 		&:hover {
 			cursor: pointer;
 		}
-	}
-}
-
-
-@keyframes opacity {
-	100% {
-		opacity: 0.8;
-		box-shadow: 0px 1px 15px rgba(0, 0, 0, .5);
 	}
 }

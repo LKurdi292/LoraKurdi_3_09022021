@@ -1,3 +1,7 @@
+@import "../utils/variables";
+@import "../utils/functions";
+@import "../utils/mixins";
+
 /* Header commun aux 5 pages */ 
 .header {
 	height: 4.5vh;
@@ -8,6 +12,10 @@
 	background-color: white;
 	@extend %shadow;
 
+	@include desktop {
+		padding: 3% 18%;
+	}
+
 	&__arrow {
 		display: none;
 	}
@@ -16,6 +24,9 @@
 		width: 200px;
 		height: auto;
 		transform: scale(0.9);
+		@include desktop {
+			width: 250px;
+		}
 	}
 	
 	&__arrow--display {

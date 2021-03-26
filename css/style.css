@@ -8,16 +8,16 @@ a {
   text-decoration: none;
 }
 
-section.menu .submenu .card, .new, .restaurants__container .card, .fonctionnement__etape .texteEtape, .header, .buttonContainer {
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+.card, .new, .restaurants__container .card, .fonctionnement__etape .texteEtape, .header, .buttonContainer {
+  box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.3);
 }
 
-section.menu .submenu .card:hover, .restaurants__container .card:hover, .buttonContainer:hover {
-  box-shadow: -1px -1px 15px rgba(0, 0, 0, 0.5);
+.restaurants__container .card:hover {
+  box-shadow: -1px -1px 6px rgba(0, 0, 0, 0.5);
 }
 
 /* Media Queries */
-/* Le coeur et ses animations - battements par défaut et remplissage au hover*/
+/* Le coeur et ses animations - battements par défaut et remplissage au hover* - Accueil */
 .coeur {
   position: relative;
   margin: auto;
@@ -69,6 +69,7 @@ section.menu .submenu .card:hover, .restaurants__container .card:hover, .buttonC
   margin: auto;
   text-align: center;
   border-radius: 100px;
+  transition: opacity 300ms ease-in-out;
 }
 @media (min-width: width(tablet)) {
   .buttonContainer {
@@ -76,7 +77,8 @@ section.menu .submenu .card:hover, .restaurants__container .card:hover, .buttonC
   }
 }
 .buttonContainer:hover {
-  animation: opacity 500ms forwards;
+  opacity: 0.8;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
 }
 .buttonContainer button {
   width: 100%;
@@ -97,12 +99,17 @@ section.menu .submenu .card:hover, .restaurants__container .card:hover, .buttonC
   cursor: pointer;
 }
 
-@keyframes opacity {
-  100% {
-    opacity: 0.8;
-    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.5);
-  }
+.card, .new, .restaurants__container .card, .fonctionnement__etape .texteEtape, .header, .buttonContainer {
+  box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.3);
 }
+
+.restaurants__container .card:hover {
+  box-shadow: -1px -1px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Colors */
+/* MQ */
+/* Media Queries */
 /* Header commun aux 5 pages */
 .header {
   height: 4.5vh;
@@ -112,6 +119,11 @@ section.menu .submenu .card:hover, .restaurants__container .card:hover, .buttonC
   align-items: center;
   background-color: white;
 }
+@media (min-width: 1430px) {
+  .header {
+    padding: 3% 18%;
+  }
+}
 .header__arrow {
   display: none;
 }
@@ -119,6 +131,11 @@ section.menu .submenu .card:hover, .restaurants__container .card:hover, .buttonC
   width: 200px;
   height: auto;
   transform: scale(0.9);
+}
+@media (min-width: 1430px) {
+  .header__logo {
+    width: 250px;
+  }
 }
 .header__arrow--display {
   cursor: pointer;
@@ -131,12 +148,12 @@ section.menu .submenu .card:hover, .restaurants__container .card:hover, .buttonC
   width: 20px;
 }
 
-section.menu .submenu .card, .new, .restaurants__container .card, .fonctionnement__etape .texteEtape, .buttonContainer, .header {
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+.card, .new, .restaurants__container .card, .fonctionnement__etape .texteEtape, .buttonContainer, .header {
+  box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.3);
 }
 
-section.menu .submenu .card:hover, .restaurants__container .card:hover, .buttonContainer:hover {
-  box-shadow: -1px -1px 15px rgba(0, 0, 0, 0.5);
+.restaurants__container .card:hover {
+  box-shadow: -1px -1px 6px rgba(0, 0, 0, 0.5);
 }
 
 /* Colors */
@@ -164,6 +181,11 @@ section.menu .submenu .card:hover, .restaurants__container .card:hover, .buttonC
   .footer__container {
     width: 75%;
     font-size: 20px;
+  }
+}
+@media (min-width: 1430px) {
+  .footer__container {
+    padding: 3% 0 0 0;
   }
 }
 .footer__container .fas {
@@ -222,12 +244,12 @@ section.menu .submenu .card:hover, .restaurants__container .card:hover, .buttonC
 /* Media Queries */
 /* Colors */
 /* MQ */
-section.menu .submenu .card, .new, .restaurants__container .card, .fonctionnement__etape .texteEtape, .buttonContainer, .header {
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+.card, .new, .restaurants__container .card, .fonctionnement__etape .texteEtape, .buttonContainer, .header {
+  box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.3);
 }
 
-section.menu .submenu .card:hover, .restaurants__container .card:hover, .buttonContainer:hover {
-  box-shadow: -1px -1px 15px rgba(0, 0, 0, 0.5);
+.restaurants__container .card:hover {
+  box-shadow: -1px -1px 6px rgba(0, 0, 0, 0.5);
 }
 
 @font-face {
@@ -246,6 +268,7 @@ section.menu .submenu .card:hover, .restaurants__container .card:hover, .buttonC
   margin: auto;
   text-align: center;
   border-radius: 100px;
+  transition: opacity 300ms ease-in-out;
 }
 @media (min-width: 600px) {
   .buttonContainer {
@@ -253,7 +276,8 @@ section.menu .submenu .card:hover, .restaurants__container .card:hover, .buttonC
   }
 }
 .buttonContainer:hover {
-  animation: opacity 500ms forwards;
+  opacity: 0.8;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
 }
 .buttonContainer button {
   width: 100%;
@@ -274,22 +298,16 @@ section.menu .submenu .card:hover, .restaurants__container .card:hover, .buttonC
   cursor: pointer;
 }
 
-@keyframes opacity {
-  100% {
-    opacity: 0.8;
-    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.5);
-  }
-}
-section.menu .submenu .card, .new, .restaurants__container .card, .fonctionnement__etape .texteEtape, .buttonContainer, .header {
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+.card, .new, .restaurants__container .card, .fonctionnement__etape .texteEtape, .buttonContainer, .header {
+  box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.3);
 }
 
-section.menu .submenu .card:hover, .restaurants__container .card:hover, .buttonContainer:hover {
-  box-shadow: -1px -1px 15px rgba(0, 0, 0, 0.5);
+.restaurants__container .card:hover {
+  box-shadow: -1px -1px 6px rgba(0, 0, 0, 0.5);
 }
 
 /* Media Queries */
-/* Le coeur et ses animations - battements par défaut et remplissage au hover*/
+/* Le coeur et ses animations - battements par défaut et remplissage au hover* - Accueil */
 .coeur {
   position: relative;
   margin: auto;
@@ -724,10 +742,16 @@ figure.resto-pic {
     height: 50vh;
   }
 }
+@media (min-width: 1430px) {
+  figure.resto-pic {
+    height: 60vh;
+    max-width: 80%;
+    margin: auto;
+  }
+}
 figure.resto-pic img {
   width: 100%;
   max-height: 100%;
-  max-width: 100%;
   object-fit: cover;
 }
 
@@ -740,11 +764,29 @@ section.menu {
   margin-top: -4rem;
   position: relative;
 }
+@media (min-width: 600px) {
+  section.menu {
+    padding: 4% 10%;
+  }
+}
+@media (min-width: 1430px) {
+  section.menu {
+    width: 80%;
+    margin: -4rem auto 0 auto;
+    padding: 4% 0 8% 0;
+  }
+}
 section.menu .menu__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 5% 0;
+}
+@media (min-width: 1430px) {
+  section.menu .menu__header {
+    justify-content: flex-start;
+    margin: 2% 0 8% 0;
+  }
 }
 section.menu .menu__header h2 {
   font-style: italic;
@@ -753,9 +795,10 @@ section.menu .menu__header h2 {
   font-size: 28px;
   margin: 0;
 }
-@media (min-width: 600px) {
+@media (min-width: 1430px) {
   section.menu .menu__header h2 {
-    font-size: 30px;
+    font-size: 40px;
+    margin: 0 8% 0 4%;
   }
 }
 section.menu .menu__header .heartContainer {
@@ -774,11 +817,45 @@ section.menu .menu__header .heartContainer {
 section.menu .menu__header .heartContainer .far.fa-heart {
   transform: scale(2, 2.2);
   opacity: 0.5;
+  color: #fface8;
 }
-section.menu .submenu:not(:last-child) {
+section.menu .menu__header .heartContainer .fillingHeart {
+  transition: all 0.5s linear 0s;
+  background-color: #fface8;
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border: orange 1px dashed;
+}
+section.menu .menu__header .heartContainer .fillingHeart:hover, section.menu .menu__header .heartContainer .fillingHeart:focus {
+  display: block;
+}
+section.menu .submenusContainer {
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 1430px) {
+  section.menu .submenusContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+section.menu .submenusContainer .submenu:not(:last-child) {
   margin: 8% 0;
 }
-section.menu .submenu .submenu__title {
+@media (min-width: 600px) {
+  section.menu .submenusContainer .submenu:not(:last-child) {
+    margin: 0;
+  }
+}
+@media (min-width: 1430px) {
+  section.menu .submenusContainer .submenu:not(:last-child) {
+    margin: 0;
+  }
+}
+section.menu .submenusContainer .submenu .submenu__title {
   font-size: 18px;
   text-transform: uppercase;
   font-family: "roboto";
@@ -789,11 +866,12 @@ section.menu .submenu .submenu__title {
   padding-bottom: 0.5rem;
 }
 @media (min-width: 600px) {
-  section.menu .submenu .submenu__title {
+  section.menu .submenusContainer .submenu .submenu__title {
     font-size: 20px;
+    margin-bottom: 5%;
   }
 }
-section.menu .submenu .submenu__title:after {
+section.menu .submenusContainer .submenu .submenu__title:after {
   content: "";
   background-color: #5dd1b5;
   width: 50px;
@@ -802,122 +880,95 @@ section.menu .submenu .submenu__title:after {
   left: 0;
   bottom: 0;
 }
-section.menu .submenu .card {
-  width: 90%;
-  height: 50px;
+
+.card {
+  height: 70px;
   margin: 5% auto;
-  padding: 3%;
   background-color: white;
   border-radius: 15px;
   display: flex;
-  justify-content: space-between;
-  overflow: hidden;
-}
-section.menu .submenu .card .texte {
-  width: 80%;
-  font-family: "roboto";
-}
-section.menu .submenu .card .texte p:not(:last-child) {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 2% 0;
-}
-@media (min-width: 600px) {
-  section.menu .submenu .card .texte p:not(:last-child) {
-    font-size: 18px;
-  }
-}
-section.menu .submenu .card .texte p {
-  font-size: 14px;
-  margin: 0;
-}
-@media (min-width: 600px) {
-  section.menu .submenu .card .texte p {
-    font-size: 16px;
-  }
-}
-section.menu .submenu .card .prix {
-  width: 10%;
-  margin: 0;
-  padding-bottom: 1%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-section.menu .submenu .card .prix strong {
-  text-align: center;
-  font-size: 14px;
-  font-weight: 600;
-  font-family: "roboto";
-  opacity: 0.8;
-}
-@media (min-width: 600px) {
-  section.menu .submenu .card .prix strong {
-    font-size: 16px;
-  }
-}
-section.menu .submenu .card .checkContainer {
-  margin: -3.2% -65px 0 0;
-  display: none;
-  width: 65px;
-  height: 74px;
-  border-radius: 0 15px 15px 0;
-  background-color: #99E2D0;
-}
-section.menu .submenu .card .checkContainer .checkRoundContainer {
-  background-color: white;
-  border-radius: 50%;
-  width: 22px;
-  height: 22px;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  transform: rotate(270deg);
-  animation: checkRotate 450ms forwards;
-}
-section.menu .submenu .card .checkContainer .checkRoundContainer .fa-check {
-  color: #99E2D0;
-  font-weight: 600;
-}
-section.menu .submenu .card:hover {
-  transform: scale(1.02);
-  padding: 3% 0 3% 3%;
   overflow: hidden;
 }
-section.menu .submenu .card:hover .texte {
+@media (min-width: 600px) {
+  .card {
+    width: 370px;
+  }
+}
+.card .texte {
+  margin: 3%;
+  flex: 1;
+  font-family: "roboto";
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.card .texte p {
+  font-size: 15px;
+  margin: 2% 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-section.menu .submenu .card:hover .prix {
-  animation: SlideToLeft 550ms forwards;
+.card .texte p:not(:last-child) {
+  font-size: 16px;
+  font-weight: bold;
 }
-section.menu .submenu .card:hover .checkContainer {
+.card .prix {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "roboto";
+  padding-bottom: 3%;
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  opacity: 0.8;
+  transition: all 450ms ease-in-out;
+}
+.card .checkContainer {
+  margin: 0 -70px 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: SlideToLeft 550ms forwards;
+  width: 70px;
+  min-height: 100%;
+  border-radius: 0 15px 15px 0;
+  background-color: #99E2D0;
+  transition: all 450ms ease-in-out;
 }
-section.menu .submenu .card:hover .checkContainer::after {
-  animation: SlideToRight 400ms forwards;
+.card .checkContainer .checkRoundContainer {
+  font-size: 18px;
+  background-color: white;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-180deg);
+  transition: all 400ms ease-in-out;
+}
+.card .checkContainer .checkRoundContainer .fa-check {
+  color: #99E2D0;
+  font-weight: 600;
+  font-size: 16px;
 }
 
-/* Check icon animation*/
-@keyframes checkRotate {
-  100% {
-    transform: rotate(0deg);
-  }
+/* Les animations au hover pour le desktop et au clic/focus pour le mobile */
+.card:hover, .card:focus, .card:focus-within, .card:active {
+  /* Ajouté selon tes conseils*/
 }
-@keyframes SlideToLeft {
-  100% {
-    transform: translateX(-65px);
-  }
+.card:hover .prix, .card:focus .prix, .card:focus-within .prix, .card:active .prix {
+  transform: translateX(-65px);
 }
-@keyframes SlideToRight {
-  100% {
-    transform: translateX(20%);
-  }
+.card:hover .checkContainer, .card:focus .checkContainer, .card:focus-within .checkContainer, .card:active .checkContainer {
+  transform: translateX(-65px);
 }
+.card:hover .checkContainer .checkRoundContainer, .card:focus .checkContainer .checkRoundContainer, .card:focus-within .checkContainer .checkRoundContainer, .card:active .checkContainer .checkRoundContainer {
+  transform: rotate(0deg);
+}
+
 /* Section boutton commander */
 section.buttonSection {
   background-color: #f6f6f6;
@@ -931,13 +982,19 @@ section.buttonSection {
     height: 20vh;
   }
 }
-
-.buttonContainer, .header, .fonctionnement__etape .texteEtape, .restaurants__container .card, .new, section.menu .submenu .card {
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+@media (min-width: 1430px) {
+  section.buttonSection {
+    width: 80%;
+    margin: auto;
+  }
 }
 
-.buttonContainer:hover, .restaurants__container .card:hover, section.menu .submenu .card:hover {
-  box-shadow: -1px -1px 15px rgba(0, 0, 0, 0.5);
+.buttonContainer, .header, .fonctionnement__etape .texteEtape, .restaurants__container .card, .new, .card {
+  box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.3);
+}
+
+.restaurants__container .card:hover {
+  box-shadow: -1px -1px 6px rgba(0, 0, 0, 0.5);
 }
 
 @font-face {

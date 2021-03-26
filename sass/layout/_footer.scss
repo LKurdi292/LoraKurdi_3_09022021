@@ -24,6 +24,9 @@
 			width: 75%;
 			font-size: 20px;
 		}
+		@include desktop {
+			padding: 3% 0 0 0;
+		}
 
 		.fas {
 			margin-right: 10px;
