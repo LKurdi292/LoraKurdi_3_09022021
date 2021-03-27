@@ -72,35 +72,63 @@ section.menu {
 		.heartContainer {
 			width: 45px;
 			height: 45px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
 			margin-right: 15px;
+			position: relative;
+			cursor: pointer;
+			background-color: black;
+			//border: blue 1px dashed;
+			
 			@include tablet {
 				margin-right: 45px;
 			}
-			
-			.far.fa-heart {
-				transform: scale(2, 2.2);
-				opacity: 0.5;
-				color: color(secondary_light);
-			}
 
-			.fillingHeart {
-				transition: all 0.5s linear 0s;
-				background-color: color(secondary_light);
-				display: none;
+			&::before {
+				content: "";
+				opacity: 0;
 				position: absolute;
-				left: 0;
-				bottom: 0;
-				border: orange 1px dashed;
-				
-				&:hover, &:focus {
-					display: block;
+				background: linear-gradient(0deg, color(secondary_light), color(primary));
+				height: 100%;
+				width: 100%;
+				transition: 0.5s ease-in-out;
+				//border: black 1px dashed;
+			}
+			
+			&:hover::before {
+				content: "";
+				opacity: 1;
+			}
+			
+			.fa-heart {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				background-color: color(bg-menu);
+				display: flex;
+				justify-content: center;
+				align-self: center;
+				mix-blend-mode: lighten;
+				//border: orange 1px dashed;
+				&::before {
+					display: flex;
+					justify-content: center;
+					align-self: center;
+					transform: scale(2, 2.2);
+				}
+				&--Filled {
+					background: linear-gradient(0deg, color(secondary_light), color(primary));
+					//transition-duration: 300ms;
+					bottom: 0;
+					left: 0;
+					width: 0;
+					height: 0;
+					//border: orange 1px dashed;
 				}
 			}
-			
 
+			&:hover .fa-heart--Filled {
+				width: 100%;
+				height: 100%;
+			}
 		}
 	}
 
@@ -171,13 +199,14 @@ section.menu {
 
 	.texte {
 		margin: 3%;
-		flex: 1;
+		width: 85%;
 		font-family: 'roboto';
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		
 		p {
+			width: 100%;
 			font-size: 15px;
 			margin: 2% 0;
 			white-space: nowrap;
@@ -194,17 +223,21 @@ section.menu {
 		font-size: 16px;
 		font-weight: 600;
 		font-family: 'roboto';
-		padding-bottom: 3%;
-		margin: 0 1rem;
+		height: 100%;
+		padding-bottom: 7%;
+		width: 10%;
+		margin: 0 0.5rem 0 1rem;
+		text-align: center;
 		display: flex;
 		flex-direction: column;
-		align-self: flex-end;
+		justify-content: flex-end;
+		// align-self: center;
 		opacity: 0.8;
 		transition: all 450ms ease-in-out;
 	}
 
 	.checkContainer {
-		margin: 0 -70px 0 0;
+		margin: 0 -66px 0 0;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -241,26 +274,22 @@ section.menu {
 /* Les animations au hover pour le desktop et au clic/focus pour le mobile */
 .card {
 	&:hover, &:focus, &:focus-within, &:active {
-		/* Ajouté selon tes conseils*/ 
-		// overflow: hidden;
-		// white-space: nowrap;
-		// text-overflow: ellipsis;
-		// max-width: auto;
-
-		// .texte {
-		// 	p {
-		// 		overflow: hidden;
-		// 		white-space: nowrap;
-		// 		text-overflow: ellipsis;
-		// 	}
-		// }
+		.texte {
+			width: 85%;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			p {
+				width: 85%;
+			}
+		}
 
 		.prix {
-			transform: translateX(-65px);
+			transform: translateX(-66px);
 		}
 		
 		.checkContainer {
-			transform: translateX(-65px);
+			transform: translateX(-66px);
 
 			.checkRoundContainer {
 				transform: rotate(0deg);
