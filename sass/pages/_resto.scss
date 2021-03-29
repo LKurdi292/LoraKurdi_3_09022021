@@ -1,5 +1,3 @@
-
-
 /* Section image*/
 
 figure.resto-pic {
@@ -8,10 +6,10 @@ figure.resto-pic {
 	display: flex;
 	max-width: 100%;
 	margin: 0;
-	@include tablet {
+	@include responsive('tablet') {
 		height: 50vh;
 	}
-	@include desktop {
+	@include responsive('desktop') {
 		height: 60vh;
 		max-width: 80%;
 		margin: auto;
@@ -35,13 +33,13 @@ section.menu {
 	position: relative;
 	//border: 1px red dashed;
 
-	@include tablet {
+	@include responsive('tablet') {
 		padding: 4% 10%;
 	}
-	@include desktop {
+	@include responsive('desktop') {
 		width: 80%;
 		margin: -4rem auto 0 auto;
-		padding: 4% 0 8% 0;
+		padding: 4% 0;
 	}
 
 	.menu__header {
@@ -51,9 +49,9 @@ section.menu {
 		margin: 5% 0;
 		//border: 1px green dashed;
 		
-		@include desktop {
+		@include responsive('desktop') {
 			justify-content: flex-start;
-			margin: 2% 0 8% 0;
+			margin: 0 0 8% 0;
 		}
 
 		h2 {
@@ -63,7 +61,7 @@ section.menu {
 			font-size: 28px;
 			margin: 0;
 			//border: 1px blue dashed;
-			@include desktop {
+			@include responsive('desktop') {
 				font-size: 40px;
 				margin: 0 8% 0 4%;
 			}
@@ -78,7 +76,7 @@ section.menu {
 			background-color: black;
 			//border: blue 1px dashed;
 			
-			@include tablet {
+			@include responsive('tablet') {
 				margin-right: 45px;
 			}
 
@@ -137,7 +135,7 @@ section.menu {
 		padding: 0;
 		//border: 1px black dashed;
 
-		@include desktop {
+		@include responsive('desktop') {
 			display: flex;
 			justify-content: space-around;
 			align-items: center;
@@ -145,13 +143,15 @@ section.menu {
 
 		.submenu {
 			// border: orange 1px dashed;
+			/* Animation d'apparition successive */
+
 
 			&:not(:last-child) {
 				margin: 8% 0;
-				@include tablet {
+				@include responsive('tablet') {
 					margin: 0;
 				}
-				@include desktop {
+				@include responsive('desktop') {
 					margin: 0;
 				}
 			}
@@ -165,7 +165,7 @@ section.menu {
 				margin: 0;
 				position: relative;
 				padding-bottom: 0.5rem;
-				@include tablet {
+				@include responsive('tablet') {
 					font-size: 20px;
 					margin-bottom: 5%;
 				}
@@ -193,7 +193,7 @@ section.menu {
 	align-items: center;
 	overflow: hidden;
 	@extend %shadow;
-	@include tablet {
+	@include responsive('tablet') {
 		width: 370px;
 	}
 
@@ -204,6 +204,7 @@ section.menu {
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
+		transition: all 450ms ease-in-out;
 		
 		p {
 			width: 100%;
@@ -212,6 +213,7 @@ section.menu {
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
+			transition: all 450ms ease-in-out
 		}
 		p:not(:last-child) {
 			font-size: 16px;
@@ -225,15 +227,15 @@ section.menu {
 		font-family: 'roboto';
 		height: 100%;
 		padding-bottom: 7%;
-		width: 10%;
-		margin: 0 0.5rem 0 1rem;
+		width: 50px;
+		margin: 0 0.2rem 0 1rem;
 		text-align: center;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
-		// align-self: center;
 		opacity: 0.8;
 		transition: all 450ms ease-in-out;
+		//border: 1px dashed orange;
 	}
 
 	.checkContainer {
@@ -246,7 +248,7 @@ section.menu {
 		border-radius: 0 15px 15px 0;
 		background-color: color(tertiary);
 		transition: all 450ms ease-in-out;
-		//border: 1px dashed black;
+		//border: 1px dashed blue;
 		
 		.checkRoundContainer {
 			font-size: 18px;
@@ -274,6 +276,8 @@ section.menu {
 /* Les animations au hover pour le desktop et au clic/focus pour le mobile */
 .card {
 	&:hover, &:focus, &:focus-within, &:active {
+		cursor: pointer;
+
 		.texte {
 			width: 85%;
 			white-space: nowrap;
@@ -287,10 +291,9 @@ section.menu {
 		.prix {
 			transform: translateX(-66px);
 		}
-		
+
 		.checkContainer {
 			transform: translateX(-66px);
-
 			.checkRoundContainer {
 				transform: rotate(0deg);
 			}
@@ -306,10 +309,10 @@ section.buttonSection {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	@include tablet {
+	@include responsive('tablet') {
 		height: 20vh;
 	}
-	@include desktop {
+	@include responsive('desktop') {
 		width: 80%;
 		margin: auto;
 	}

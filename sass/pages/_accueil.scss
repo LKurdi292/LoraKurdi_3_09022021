@@ -85,6 +85,11 @@
 	justify-content: center;
 	align-items: center;
 	// border: 1px solid green;
+	@include responsive('desktop') {
+		height: 8vh;
+		width: 80%;
+		margin: 0 auto;
+	}
 
 	&__markerContainer {
 		display: flex;
@@ -95,6 +100,10 @@
 			margin: 0 10px 0 0;
 			width: 12px;
 			opacity: 0.8;
+			@include responsive('desktop') {
+				width: 25px;
+				margin: 0;
+			}
 		}
 	}
 
@@ -105,8 +114,11 @@
 		font-family: 'roboto';
 		letter-spacing: 0.02rem;
 		opacity: 0.7;
-		@include tablet {
+		@include responsive('tablet') {
 			font-size: 22px;
+		}
+		@include responsive('desktop') {
+			margin-left: 2rem;	
 		}
 	}
 }
@@ -118,6 +130,11 @@
 	padding: 0 3%;
 	background-color: color(grisGlace);
 	// border: 1px solid black;
+	@include responsive('desktop') {
+		padding: 0;
+		width: 80%;
+		margin: 0 auto;
+	}
 
 	&__contentContainer {
 		padding: 50px 0;
@@ -132,7 +149,7 @@
 			font-size: 24px;
 			font-weight: 1000;
 			// border: 1px solid red;
-			@include tablet {
+			@include responsive('tablet') {
 				font-size: 28px;
 			}
 		}
@@ -144,7 +161,7 @@
 			font-size: 18px;
 			opacity: 0.6;
 			// border: 1px solid red;
-			@include tablet {
+			@include responsive('tablet') {
 				font-size: 22px;
 			}
 		}
@@ -157,8 +174,11 @@
 	font-family: 'roboto';
 	padding: 8% 6%;
 	// border: 1px solid blue;
-	@include tablet {
+	@include responsive('tablet') {
 		padding: 8% 12%;
+	}
+	@include responsive('desktop') {
+		padding: 4% 10%;
 	}
 
 	img {
@@ -169,9 +189,11 @@
 	h2 {
 		margin: 0 0 10% 0;
 		font-weight: bold;
-		@include tablet {
-			font-size: 28px;
-			//text-align: center;
+		@include responsive('tablet') {
+			font-size: 26px;
+		}
+		@include responsive('desktop') {
+			margin-bottom: 5%;
 		}
 	}
 
@@ -179,13 +201,19 @@
 		display: flex;
 		align-items: center;
 		width: 100%;
-		@include tablet {
+		@include responsive('tablet') {
 			width: 80%;
 			margin: auto;
 		}
-		// @include middle {
-		// 	width: 75%;
-		// }
+		@include responsive('smallDesktop') {
+			width: 600px;
+		}
+		@include responsive('desktop') {
+			width: 450px;
+			&:not(:last-child) {
+				margin: 4% auto;
+			}
+		}
 
 		.numContainer {
 			width: 25px;
@@ -197,7 +225,7 @@
 			background-color: color(primary);
 			z-index: 2;
 			margin: 0 0 5% 0;
-			@include tablet {
+			@include responsive('tablet') {
 				width: 30px;
 				height: 30px;
 			}
@@ -206,7 +234,7 @@
 				color: white;
 				margin: 0;
 				font-size: 13px;
-				@include tablet {
+				@include responsive('tablet') {
 					font-size: 16px;
 				}
 			}
@@ -225,9 +253,9 @@
 			border-radius: 20px;
 			margin: 0 0 5% -0.8rem;
 			@extend %shadow;
-			@include tablet {
+			@include responsive('tablet') {
 				height: 90px;
-				font-size: 20px;
+				font-size: 18px;
 			}
 
 			p {
@@ -266,16 +294,27 @@
 .restaurants {
 	background-color: color(grisGlace);
 	padding: 10%;
-	@include tablet {
+	@include responsive('tablet') {
 		padding: 10% 12%;
+	}
+	@include responsive('smallDesktop') {
+		padding: 10% 18%;
+	}
+
+	@include responsive('desktop') {
+		padding: 4% 0 8% 0;
 	}
 
 	h2 {
 		font-family: 'roboto';
 		font-weight: bold;
 		margin: 0 0 6% 0;
-		@include tablet {
-			font-size: 28px;
+		@include responsive('tablet') {
+			font-size: 26px;
+		}
+		@include responsive('desktop') {
+			width: 80%;
+			margin: 0 auto 6%;
 		}
 	}
 
@@ -283,8 +322,17 @@
 		margin: 0 0 5% 0;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-around;
-		// border: 1px dashed red;
+		align-items: space-around;
+		//border: 1px dashed red;
+
+		@include responsive('desktop') {
+			width: 80%;
+			margin: auto;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+		}
 
 		.card {
 			width: 100%;
@@ -293,18 +341,25 @@
 			border-radius: 15px;
 			cursor: pointer;
 			@extend %shadow;
-			// border: 1px blue solid;
+			//border: 1px blue solid;
 			
 			&:hover {
-				transform: scale(1.01);
 				@extend %shadowHover;
 			}
 			
-			@include tablet {
+			@include responsive('tablet') {
 				width: 90%;
 				margin: 6% auto;
 			}
-			
+
+			@include responsive('smallDesktop') {
+				width: 500px;
+			}
+
+			@include responsive('desktop') {
+				margin: 2% auto;
+				width: 450px;
+			}
 			a {
 				display: block;
 				width: 100%;
@@ -321,7 +376,7 @@
 	height: 75%;
 	border-radius: 15px 15px 0 0;
 	// border: 1px solid orange;
-	@include tablet {
+	@include responsive('tablet') {
 		height: 65%;
 	}
 }
@@ -329,7 +384,7 @@
 	background: url('../images/restaurants/resto_la-palette-du-gout.jpg') no-repeat; 
 	background-size: cover;
 	background-position: 95% 90%;
-	@include tablet {
+	@include responsive('tablet') {
 		background-position: 95% 75%;
 	}
 }
@@ -356,7 +411,7 @@
 	padding: 1% 0 1% 4%;
 	display: flex;
 	justify-content: space-between;
-	@include tablet {
+	@include responsive('tablet') {
 		height: 35%;
 	}
 
@@ -369,7 +424,7 @@
 			margin: 2% 0 0 0;
 			font-family: 'roboto';
 			font-size: 18px;
-			@include tablet {
+			@include responsive('tablet') {
 				font-size: 22px;
 			}
 		}
@@ -396,9 +451,9 @@
 	@extend %shadow;
 	background-color: color(tertiary);
 	color: color(couleurNouveau);
-	@include tablet {
-		height: 25px;
-		font-size: 20px;
+	@include responsive('tablet') {
+		height: 15px;
+		font-size: 16px;
 		top: 20px;
 		right: 20px;
 	}

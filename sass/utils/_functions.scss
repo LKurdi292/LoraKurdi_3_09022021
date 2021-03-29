@@ -2,8 +2,3 @@
 @function color($color_name) {
 	@return map-get($colors, $color_name);
 }
-
-/* MQ */
-@function width($device) {
-	@return map-get($breakpoints , $device )
-}

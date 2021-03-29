@@ -9,7 +9,7 @@
 	height: 25vh;
 	background-color: color(footer);
 	// border: 1px dashed red;
-	@include tablet {
+	@include responsive('tablet') {
 		height: 35vh;
 	}
 
@@ -20,12 +20,15 @@
 		padding: 5% 0 0 0;
 		font-weight: 600;
 		letter-spacing: 0.02em;
-		@include tablet {
+		@include responsive('tablet') {
 			width: 75%;
+			margin: 0 auto;
 			font-size: 20px;
 		}
-		@include desktop {
+		@include responsive('desktop') {
 			padding: 3% 0 0 0;
+			width: 80%;
+			margin: 0 auto;
 		}
 
 		.fas {
@@ -35,7 +38,7 @@
 
 		> *:not(:last-child) {
 			margin-bottom: 8px;
-			@include tablet {
+			@include responsive('tablet') {
 				margin-bottom: 20px;
 			}
 		}
@@ -54,7 +57,7 @@
 			font-size: 20px;
 			font-weight: lighter;
 			// border: 1px solid red;
-			@include tablet {
+			@include responsive('tablet') {
 				font-size: 26px;
 				margin:  0 0 2rem;
 			}
@@ -75,7 +78,7 @@
 
 			li:not(:last-child) {
 				margin-bottom: 10px;
-				@include tablet {
+				@include responsive('tablet') {
 					margin-bottom: 20px;
 				}
 			}

@@ -7,7 +7,7 @@ $colors: (
 	couleurNouveau: #2F8373,
 	grisGlace: rgba(237, 237, 237, 0.5),
 	grisPerle: rgba(206, 206, 206, 0.5),
-	bg-menu: rgba(246, 246, 246,1),
+	bg-menu: rgba(246, 246, 246, 1),
 	grisPerle_dark: darken(rgba(206, 206, 206, 0.5), 10%),
 	footer: rgb(58, 56, 56)
 );
@@ -17,11 +17,12 @@ $colors: (
 }
 
 %shadowHover {
-	box-shadow:	-1px -1px 6px rgba(0, 0, 0, .5);
+	box-shadow:	-1px -1px 8px rgba(0, 0, 0, .8);
 }
 
 $breakpoints: (
-	tablet: 600px,
-	desktop: 1430px,
-	LGdesktop: 1920px
+	'tablet' : (min-width: 600px),
+	'smallDesktop': (min-width: 1000px),
+	'desktop': (min-width: 1430px),
+	//LGdesktop: 1920px
 );

@@ -1,7 +1,7 @@
 @import "../utils/variables";
 @import "../utils/mixins";
 
-/* Le coeur et ses animations - battements par défaut et remplissage au hover* - Accueil */
+/* Le coeur et son animation 'battements' - Accueil */
 .coeur {
 	position: relative;
     margin: auto;
@@ -10,7 +10,7 @@
     transform: rotate(45deg);
 	background-color: color(secondary_light);
 	animation: beat 1s infinite;
-	@include tablet {
+	@include responsive('tablet') {
 		width: 25px;
 		height: 25px;
 	}

@@ -8,7 +8,7 @@
 	border-radius: 100px;
 	transition: opacity 300ms ease-in-out;
 	@extend %shadow;
-	@include tablet {
+	@include responsive('tablet') {
 		width: 300px;
 	}
 
@@ -27,7 +27,7 @@
 		font-weight: bold;
 		font-size: 18px;
 		background: linear-gradient(150deg, color(secondary), color(primary));
-		@include tablet {
+		@include responsive('tablet') {
 			font-size: 20px;
 		}
 

@@ -12,7 +12,7 @@
 	background-color: white;
 	@extend %shadow;
 
-	@include desktop {
+	@include responsive('desktop') {
 		padding: 3% 18%;
 	}
 
@@ -24,7 +24,7 @@
 		width: 200px;
 		height: auto;
 		transform: scale(0.9);
-		@include desktop {
+		@include responsive('desktop') {
 			width: 250px;
 		}
 	}
