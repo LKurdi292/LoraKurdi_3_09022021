@@ -69,14 +69,27 @@ a {
   margin: auto;
   text-align: center;
   border-radius: 100px;
-  transition: opacity 300ms ease-in-out;
+  position: relative;
+  z-index: 1;
 }
 @media (min-width: 600px) {
   .buttonContainer {
     width: 300px;
   }
 }
-.buttonContainer:hover {
+.buttonContainer::after {
+  content: "";
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 100px;
+  transition: all 250ms ease-in-out;
+}
+.buttonContainer:hover::after {
   opacity: 0.8;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
 }
@@ -262,20 +275,86 @@ a {
   font-family: "roboto";
   src: url(../fonts/roboto/Roboto-Regular.ttf);
 }
+/* Animation du loading spinner */
+/* Apparition de la page */
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0.01;
+  }
+  99% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Rotation du loading spinner */
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Disparition du Loading spinner */
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* Apparition des cards */
+@keyframes card {
+  0% {
+    margin-top: 2.7em;
+    opacity: 0;
+  }
+  60% {
+    margin-top: 2em;
+    opacity: 0;
+  }
+  80% {
+    margin-top: 1em;
+    opacity: 0.7;
+  }
+  100% {
+    margin-top: 0.8em;
+    opacity: 1;
+  }
+}
 /* Les boutons */
 .buttonContainer {
   width: 250px;
   margin: auto;
   text-align: center;
   border-radius: 100px;
-  transition: opacity 300ms ease-in-out;
+  position: relative;
+  z-index: 1;
 }
 @media (min-width: 600px) {
   .buttonContainer {
     width: 300px;
   }
 }
-.buttonContainer:hover {
+.buttonContainer::after {
+  content: "";
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 100px;
+  transition: all 250ms ease-in-out;
+}
+.buttonContainer:hover::after {
   opacity: 0.8;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
 }
@@ -353,28 +432,13 @@ a {
     transform: scale(0.8) rotate(45deg);
   }
 }
-/* Apparition de la page pendant la disparition du loading spinner */
 .main {
   margin: 0;
   width: 100%;
   animation: appear 4500ms linear;
 }
 
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  90% {
-    opacity: 0.01;
-  }
-  99% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-/* Loading spinner et son animation rotation */
+/* Le loader et sa rotation */
 .loader {
   display: inline-block;
   width: 300px;
@@ -386,11 +450,6 @@ a {
   animation: spin 1500ms ease-in-out 3;
 }
 
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
-}
 /* Container du loading spinner qui disparait pendant l'apparition de la page */
 .loaderContainer {
   position: absolute;
@@ -405,17 +464,6 @@ a {
   animation: disappear 4400ms ease-in-out;
 }
 
-@keyframes disappear {
-  0% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 0.7;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 /* Section Position - Ville de recherche */
 .position {
   margin: 0;
@@ -947,18 +995,10 @@ section.menu .submenusContainer {
     align-items: center;
   }
 }
-section.menu .submenusContainer .submenu {
-  /* Animation d'apparition successive */
-}
 section.menu .submenusContainer .submenu:not(:last-child) {
   margin: 8% 0;
 }
 @media (min-width: 600px) {
-  section.menu .submenusContainer .submenu:not(:last-child) {
-    margin: 0;
-  }
-}
-@media (min-width: 1430px) {
   section.menu .submenusContainer .submenu:not(:last-child) {
     margin: 0;
   }
@@ -972,6 +1012,7 @@ section.menu .submenusContainer .submenu .submenu__title {
   margin: 0;
   position: relative;
   padding-bottom: 0.5rem;
+  animation: card 2250ms -1.2s ease-out;
 }
 @media (min-width: 600px) {
   section.menu .submenusContainer .submenu .submenu__title {
@@ -979,7 +1020,7 @@ section.menu .submenusContainer .submenu .submenu__title {
     margin-bottom: 5%;
   }
 }
-section.menu .submenusContainer .submenu .submenu__title:after {
+section.menu .submenusContainer .submenu .submenu__title::after {
   content: "";
   background-color: #5dd1b5;
   width: 50px;
@@ -997,6 +1038,7 @@ section.menu .submenusContainer .submenu .submenu__title:after {
   display: flex;
   align-items: center;
   overflow: hidden;
+  animation: card 2250ms ease-out;
 }
 @media (min-width: 600px) {
   .card {
@@ -1069,7 +1111,20 @@ section.menu .submenusContainer .submenu .submenu__title:after {
   font-size: 16px;
 }
 
-/* Les animations au hover pour le desktop et au clic/focus pour le mobile */
+/* Animation des cards */
+.card {
+  /* Apparition au chargement de la page */
+  /* Au hover pour le desktop et au clic/focus pour le mobile */
+}
+.card--1 {
+  animation-delay: -0.9s;
+}
+.card--2 {
+  animation-delay: -0.6s;
+}
+.card--3 {
+  animation-delay: -0.3s;
+}
 .card:hover, .card:focus, .card:focus-within, .card:active {
   cursor: pointer;
 }

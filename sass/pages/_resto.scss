@@ -143,15 +143,10 @@ section.menu {
 
 		.submenu {
 			// border: orange 1px dashed;
-			/* Animation d'apparition successive */
-
 
 			&:not(:last-child) {
 				margin: 8% 0;
 				@include responsive('tablet') {
-					margin: 0;
-				}
-				@include responsive('desktop') {
 					margin: 0;
 				}
 			}
@@ -165,12 +160,13 @@ section.menu {
 				margin: 0;
 				position: relative;
 				padding-bottom: 0.5rem;
+				animation: card 2250ms -1.2s ease-out;
 				@include responsive('tablet') {
 					font-size: 20px;
 					margin-bottom: 5%;
 				}
 
-				&:after {
+				&::after {
 					content: "";
 					background-color: color(tertiary_dark);
 					width: 50px;
@@ -181,6 +177,9 @@ section.menu {
 				}
 			}
 		}
+		// #entrees {
+		// 	animation-delay: ;
+		// }
 	}
 }
 
@@ -192,7 +191,9 @@ section.menu {
 	display: flex;
 	align-items: center;
 	overflow: hidden;
+	animation: card 2250ms ease-out;
 	@extend %shadow;
+
 	@include responsive('tablet') {
 		width: 370px;
 	}
@@ -273,8 +274,23 @@ section.menu {
 }
 
 
-/* Les animations au hover pour le desktop et au clic/focus pour le mobile */
+
+
+/* Animation des cards */
 .card {
+	/* Apparition au chargement de la page */
+
+	&--1 {
+		animation-delay: -0.9s;
+	}
+	&--2 {
+		animation-delay: -0.6s;
+	}
+	&--3 {
+		animation-delay: -0.3s;
+	}
+
+	/* Au hover pour le desktop et au clic/focus pour le mobile */
 	&:hover, &:focus, &:focus-within, &:active {
 		cursor: pointer;
 

@@ -2,35 +2,20 @@
 @import "../utils/functions";
 @import "../utils/variables";
 @import "../utils/fonts";
+@import "../utils/keyframes";
 @import "../components/boutons";
 @import "../components/coeur";
 
 
 
 
-/* Apparition de la page pendant la disparition du loading spinner */
 .main {
 	margin: 0;
 	width: 100%;
 	animation: appear 4500ms linear;
 }
 
-@keyframes appear {
-	0% {
-		opacity: 0;
-	}
-	90% {
-		opacity: 0.01;
-	}
-	99% {
-		opacity: 0.5;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
-/* Loading spinner et son animation rotation */
+/* Le loader et sa rotation */
 .loader {
 	display: inline-block;
 	width: 300px;
@@ -40,12 +25,6 @@
 	border-top-color: color(primary);
 	border-bottom-color: color(primary);
 	animation: spin 1500ms ease-in-out 3;
-}
-
-@keyframes spin{
-	100% {
-		transform: rotate(360deg);
-	}
 }
 
 /* Container du loading spinner qui disparait pendant l'apparition de la page */
@@ -61,18 +40,6 @@
 	z-index: -3;
 	//border: 1px solid black;
 	animation: disappear 4400ms ease-in-out;
-}
-
-@keyframes disappear {
-	0% {
-		opacity: 1;
-	}
-	90% {
-		opacity: 0.7;
-	}
-	100% {
-		opacity: 0;
-	}
 }
 
 
