@@ -19,7 +19,7 @@
 ## Table of Contents
 
 - [Overview](#overview)
-  - [Built With](#built-with)
+- [Built With](#built-with)
 - [Features](#features)
 - [Contact](#contact)
 
@@ -27,7 +27,7 @@
 
 ## Overview
 
-![screenshot]("./images/capture_ohmyfood")
+![screenshot](./images/capture_ohmyfood.png)
 
 Click on "Solution" to see the page.
 
