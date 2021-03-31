@@ -1,4 +1,13 @@
 @charset "UTF-8";
+.card, .new, .restaurants__container .card, .fonctionnement__etape .texteEtape, .header, .buttonContainer {
+  box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.3);
+}
+
+.restaurants__container .card:hover {
+  box-shadow: -1px -1px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Media Queries */
 body {
   margin: 0;
   position: relative;
@@ -6,6 +15,41 @@ body {
 
 a {
   text-decoration: none;
+}
+
+/* Favicon des onglets */
+.favicon {
+  transform: scale(0.5);
+}
+
+/* Logos W3C uniquement en version desktop */
+.w3c_logo_container {
+  display: none;
+}
+@media (min-width: 1430px) {
+  .w3c_logo_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+  }
+}
+@media (min-width: 1430px) {
+  .w3c_logo_container .w3c_valid {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+  }
+  .w3c_logo_container .w3c_valid--html img {
+    height: fit-content;
+  }
+  .w3c_logo_container .w3c_valid--css img {
+    border: 0;
+    width: 68px;
+  }
 }
 
 .card, .new, .restaurants__container .card, .fonctionnement__etape .texteEtape, .header, .buttonContainer {
@@ -16,6 +60,7 @@ a {
   box-shadow: -1px -1px 8px rgba(0, 0, 0, 0.8);
 }
 
+/* Colors */
 /* Media Queries */
 /* Le coeur et son animation 'battements' - Accueil */
 .coeur {
@@ -24,7 +69,7 @@ a {
   height: 20px;
   width: 20px;
   transform: rotate(45deg);
-  background-color: color(secondary_light);
+  background-color: #fface8;
   animation: beat 1s infinite;
 }
 @media (min-width: 600px) {
@@ -43,7 +88,7 @@ a {
   width: 100%;
   height: 100%;
   left: -10px;
-  background-color: color(secondary_light);
+  background-color: #fface8;
 }
 .coeur:after {
   content: "";
@@ -52,7 +97,7 @@ a {
   width: 100%;
   height: 100%;
   top: -10px;
-  background-color: color(secondary_light);
+  background-color: #fface8;
 }
 
 @keyframes beat {
@@ -101,7 +146,7 @@ a {
   color: white;
   font-weight: bold;
   font-size: 18px;
-  background: linear-gradient(150deg, color(secondary), color(primary));
+  background: linear-gradient(150deg, #FF79DA, #9356DC);
 }
 @media (min-width: 600px) {
   .buttonContainer button {
@@ -192,7 +237,6 @@ a {
   .footer__container {
     width: 75%;
     margin: 0 auto;
-    font-size: 20px;
   }
 }
 @media (min-width: 1430px) {
@@ -229,7 +273,6 @@ a {
 }
 @media (min-width: 600px) {
   .footer__container .footer__logo {
-    font-size: 26px;
     margin: 0 0 2rem;
   }
 }
@@ -385,6 +428,7 @@ a {
   box-shadow: -1px -1px 8px rgba(0, 0, 0, 0.8);
 }
 
+/* Colors */
 /* Media Queries */
 /* Le coeur et son animation 'battements' - Accueil */
 .coeur {
@@ -432,10 +476,11 @@ a {
     transform: scale(0.8) rotate(45deg);
   }
 }
+/* Contenu de la page qui apparait progressivement */
 .main {
   margin: 0;
   width: 100%;
-  animation: appear 4500ms linear;
+  animation: appear 3000ms linear;
 }
 
 /* Le loader et sa rotation */
@@ -447,7 +492,7 @@ a {
   border-radius: 50%;
   border-top-color: #9356DC;
   border-bottom-color: #9356DC;
-  animation: spin 1500ms ease-in-out 3;
+  animation: spin 1400ms ease-in-out 2;
 }
 
 /* Container du loading spinner qui disparait pendant l'apparition de la page */
@@ -461,7 +506,7 @@ a {
   align-self: center;
   opacity: 0;
   z-index: -3;
-  animation: disappear 4400ms ease-in-out;
+  animation: disappear 2900ms ease-in-out;
 }
 
 /* Section Position - Ville de recherche */
@@ -538,7 +583,7 @@ a {
   width: 85%;
   margin: 0 auto;
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 1000;
 }
 @media (min-width: 600px) {
   .presentation__contentContainer h2 {
@@ -713,7 +758,7 @@ a {
 @media (min-width: 1430px) {
   .restaurants h2 {
     width: 80%;
-    margin: 0 auto 6%;
+    margin: 0 auto 4%;
   }
 }
 .restaurants__container {
@@ -828,14 +873,14 @@ a {
 }
 @media (min-width: 600px) {
   .textUnderPic .containerText p {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 .textUnderPic .containerText p:not(:last-child) {
   font-weight: bold;
 }
 
-/* étiquette restaurant Nouveau */
+/* Étiquette restaurant Nouveau */
 .new {
   position: absolute;
   top: 10px;
@@ -932,11 +977,13 @@ section.menu .menu__header h2 {
   }
 }
 section.menu .menu__header .heartContainer {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
   margin-right: 15px;
   position: relative;
   cursor: pointer;
+  border: none;
   background-color: black;
 }
 @media (min-width: 600px) {
@@ -944,66 +991,55 @@ section.menu .menu__header .heartContainer {
     margin-right: 45px;
   }
 }
-section.menu .menu__header .heartContainer::before {
-  content: "";
-  opacity: 0;
-  position: absolute;
-  background: linear-gradient(0deg, #fface8, #9356DC);
-  height: 100%;
-  width: 100%;
-  transition: 0.5s ease-in-out;
-}
-section.menu .menu__header .heartContainer:hover::before {
-  content: "";
+section.menu .menu__header .heartContainer:hover:before {
   opacity: 1;
 }
-section.menu .menu__header .heartContainer .fa-heart {
+section.menu .menu__header .heartContainer:before {
+  opacity: 0;
+  transition: 500ms;
+  content: "";
+  background: linear-gradient(0deg, #fface8, #9356DC);
+}
+section.menu .menu__header .heartContainer:before, section.menu .menu__header .heartContainer .fa-heart {
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: #f6f6f6;
+  top: 0;
+  left: 0;
+}
+section.menu .menu__header .heartContainer .fa-heart {
   display: flex;
   justify-content: center;
-  align-self: center;
+  align-items: center;
+  font-size: 2.2rem;
+  background-color: #f6f6f6;
+  transition: 250ms ease-in-out;
   mix-blend-mode: lighten;
 }
-section.menu .menu__header .heartContainer .fa-heart::before {
-  display: flex;
-  justify-content: center;
-  align-self: center;
-  transform: scale(2, 2.2);
+section.menu .menu__header .heartContainer:hover .notFilled {
+  opacity: 0;
 }
-section.menu .menu__header .heartContainer .fa-heart--Filled {
-  background: linear-gradient(0deg, #fface8, #9356DC);
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-}
-section.menu .menu__header .heartContainer:hover .fa-heart--Filled {
-  width: 100%;
-  height: 100%;
-}
-section.menu .submenusContainer {
+
+.submenusContainer {
   margin: 0;
   padding: 0;
 }
 @media (min-width: 1430px) {
-  section.menu .submenusContainer {
+  .submenusContainer {
     display: flex;
     justify-content: space-around;
     align-items: center;
   }
 }
-section.menu .submenusContainer .submenu:not(:last-child) {
+.submenusContainer .submenu:not(:last-child) {
   margin: 8% 0;
 }
 @media (min-width: 600px) {
-  section.menu .submenusContainer .submenu:not(:last-child) {
+  .submenusContainer .submenu:not(:last-child) {
     margin: 0;
   }
 }
-section.menu .submenusContainer .submenu .submenu__title {
+.submenusContainer .submenu .submenu__title {
   font-size: 18px;
   text-transform: uppercase;
   font-family: "roboto";
@@ -1015,12 +1051,12 @@ section.menu .submenusContainer .submenu .submenu__title {
   animation: card 2250ms -1.2s ease-out;
 }
 @media (min-width: 600px) {
-  section.menu .submenusContainer .submenu .submenu__title {
+  .submenusContainer .submenu .submenu__title {
     font-size: 20px;
     margin-bottom: 5%;
   }
 }
-section.menu .submenusContainer .submenu .submenu__title::after {
+.submenusContainer .submenu .submenu__title::after {
   content: "";
   background-color: #5dd1b5;
   width: 50px;
@@ -1114,7 +1150,7 @@ section.menu .submenusContainer .submenu .submenu__title::after {
 /* Animation des cards */
 .card {
   /* Apparition au chargement de la page */
-  /* Au hover pour le desktop et au clic/focus pour le mobile */
+  /* Animation du check au hover pour le desktop et au clic/focus pour le mobile */
 }
 .card--1 {
   animation-delay: -0.9s;
@@ -1187,5 +1223,58 @@ section.buttonSection {
 }
 /* Media Queries */
 /* Colors */
+/* Animation du loading spinner */
+/* Apparition de la page */
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0.01;
+  }
+  99% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Rotation du loading spinner */
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Disparition du Loading spinner */
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* Apparition des cards */
+@keyframes card {
+  0% {
+    margin-top: 2.7em;
+    opacity: 0;
+  }
+  60% {
+    margin-top: 2em;
+    opacity: 0;
+  }
+  80% {
+    margin-top: 1em;
+    opacity: 0.7;
+  }
+  100% {
+    margin-top: 0.8em;
+    opacity: 1;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

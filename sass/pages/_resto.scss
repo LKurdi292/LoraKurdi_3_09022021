@@ -1,3 +1,4 @@
+
 /* Section image*/
 
 figure.resto-pic {
@@ -68,118 +69,102 @@ section.menu {
 		}
 
 		.heartContainer {
-			width: 45px;
-			height: 45px;
+			width: 40px;
+			height: 40px;
+			padding: 0;
 			margin-right: 15px;
 			position: relative;
 			cursor: pointer;
+			border: none;
 			background-color: black;
-			//border: blue 1px dashed;
-			
+
 			@include responsive('tablet') {
 				margin-right: 45px;
 			}
 
-			&::before {
-				content: "";
-				opacity: 0;
-				position: absolute;
-				background: linear-gradient(0deg, color(secondary_light), color(primary));
-				height: 100%;
-				width: 100%;
-				transition: 0.5s ease-in-out;
-				//border: black 1px dashed;
-			}
-			
-			&:hover::before {
-				content: "";
+			&:hover:before {
 				opacity: 1;
 			}
+
+			&:before {
+				opacity: 0;
+				transition: 500ms;
+				content: "";
+				background: linear-gradient(0deg, color(secondary_light),color(primary));
+			}
 			
-			.fa-heart {
+			&:before, .fa-heart {
 				position: absolute;
 				height: 100%;
 				width: 100%;
-				background-color: color(bg-menu);
-				display: flex;
-				justify-content: center;
-				align-self: center;
-				mix-blend-mode: lighten;
-				//border: orange 1px dashed;
-				&::before {
-					display: flex;
-					justify-content: center;
-					align-self: center;
-					transform: scale(2, 2.2);
-				}
-				&--Filled {
-					background: linear-gradient(0deg, color(secondary_light), color(primary));
-					//transition-duration: 300ms;
-					bottom: 0;
-					left: 0;
-					width: 0;
-					height: 0;
-					//border: orange 1px dashed;
-				}
+				top: 0;
+				left: 0;
 			}
 
-			&:hover .fa-heart--Filled {
-				width: 100%;
-				height: 100%;
+			.fa-heart {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 2.2rem;
+				background-color: color(bg-menu);
+				transition: 250ms ease-in-out;
+				mix-blend-mode: lighten;
+			}
+			
+			&:hover .notFilled {
+				opacity: 0;
 			}
 		}
 	}
+}
 
-	.submenusContainer {
-		margin: 0;
-		padding: 0;
-		//border: 1px black dashed;
 
-		@include responsive('desktop') {
-			display: flex;
-			justify-content: space-around;
-			align-items: center;
-		}
+.submenusContainer {
+	margin: 0;
+	padding: 0;
+	//border: 1px black dashed;
 
-		.submenu {
-			// border: orange 1px dashed;
+	@include responsive('desktop') {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
 
-			&:not(:last-child) {
-				margin: 8% 0;
-				@include responsive('tablet') {
-					margin: 0;
-				}
-			}
+	.submenu {
+		// border: orange 1px dashed;
 
-			.submenu__title {
-				font-size: 18px;
-				text-transform: uppercase;
-				font-family: 'roboto';
-				font-weight: 400;
-				opacity: 0.6;
+		&:not(:last-child) {
+			margin: 8% 0;
+			@include responsive('tablet') {
 				margin: 0;
-				position: relative;
-				padding-bottom: 0.5rem;
-				animation: card 2250ms -1.2s ease-out;
-				@include responsive('tablet') {
-					font-size: 20px;
-					margin-bottom: 5%;
-				}
-
-				&::after {
-					content: "";
-					background-color: color(tertiary_dark);
-					width: 50px;
-					height: 4px;
-					position: absolute;
-					left: 0;
-					bottom: 0;
-				}
 			}
 		}
-		// #entrees {
-		// 	animation-delay: ;
-		// }
+
+		.submenu__title {
+			font-size: 18px;
+			text-transform: uppercase;
+			font-family: 'roboto';
+			font-weight: 400;
+			opacity: 0.6;
+			margin: 0;
+			position: relative;
+			padding-bottom: 0.5rem;
+			animation: card 2250ms -1.2s ease-out;
+			@include responsive('tablet') {
+				font-size: 20px;
+				margin-bottom: 5%;
+			}
+
+			&::after {
+				content: "";
+				background-color: color(tertiary_dark);
+				width: 50px;
+				height: 4px;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+		}
 	}
 }
 
@@ -273,9 +258,6 @@ section.menu {
 	}
 }
 
-
-
-
 /* Animation des cards */
 .card {
 	/* Apparition au chargement de la page */
@@ -290,7 +272,7 @@ section.menu {
 		animation-delay: -0.3s;
 	}
 
-	/* Au hover pour le desktop et au clic/focus pour le mobile */
+	/* Animation du check au hover pour le desktop et au clic/focus pour le mobile */
 	&:hover, &:focus, &:focus-within, &:active {
 		cursor: pointer;
 

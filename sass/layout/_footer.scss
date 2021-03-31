@@ -9,6 +9,7 @@
 	height: 25vh;
 	background-color: color(footer);
 	// border: 1px dashed red;
+
 	@include responsive('tablet') {
 		height: 35vh;
 	}
@@ -23,7 +24,6 @@
 		@include responsive('tablet') {
 			width: 75%;
 			margin: 0 auto;
-			font-size: 20px;
 		}
 		@include responsive('desktop') {
 			padding: 3% 0 0 0;
@@ -57,8 +57,8 @@
 			font-size: 20px;
 			font-weight: lighter;
 			// border: 1px solid red;
+
 			@include responsive('tablet') {
-				font-size: 26px;
 				margin:  0 0 2rem;
 			}
 		}
