@@ -579,14 +579,14 @@ a {
   text-align: center;
   font-family: "roboto";
 }
-.presentation__contentContainer h2 {
+.presentation__contentContainer h1 {
   width: 85%;
   margin: 0 auto;
   font-size: 24px;
   font-weight: 1000;
 }
 @media (min-width: 600px) {
-  .presentation__contentContainer h2 {
+  .presentation__contentContainer h1 {
     font-size: 28px;
   }
 }
@@ -959,11 +959,10 @@ section.menu .menu__header {
 }
 @media (min-width: 1430px) {
   section.menu .menu__header {
-    justify-content: flex-start;
     margin: 0 0 8% 0;
   }
 }
-section.menu .menu__header h2 {
+section.menu .menu__header h1 {
   font-style: italic;
   font-weight: 500;
   font-family: "shrikhand";
@@ -971,7 +970,7 @@ section.menu .menu__header h2 {
   margin: 0;
 }
 @media (min-width: 1430px) {
-  section.menu .menu__header h2 {
+  section.menu .menu__header h1 {
     font-size: 40px;
     margin: 0 8% 0 4%;
   }
